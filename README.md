@@ -1,2 +1,2 @@
-# EstudLivePrinc.
+# ELP.
 Site principal do EstudLive
