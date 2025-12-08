@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstudLive</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e6e6e6;
+        }
+
+        /* ---------- BOTÕES NO TOPO DIREITO ---------- */
+        .top-buttons {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            background-color: #dcdcdc;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #bcbcbc;
+        }
+
+        /* ---------- ÁREA BRANCA EM TELA COMPLETA ---------- */
+        .container {
+            width: 100%;
+            min-height: 100vh; /* agora cobre toda a tela */
+            background: #1f5f7f;
+            padding: 120px 60px 60px 60px;
+            box-sizing: border-box;
+        }
+
+        .logo-area {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-area img {
+            width: 220px; /* AUMENTEI A LOGO AQUI */
+        }
+
+        h1 {
+            text-align: center;
+            color: #0039c7;
+            font-size: 55px; /* ligeiramente maior também */
+            margin-top: 10px;
+        }
+
+        .text {
+            font-size: 20px;
+            width: 80%;
+            margin: 40px auto;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: right;
+            margin-top: 80px;
+            font-size: 20px;
+            color: #333;
+            padding-right: 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Botões no topo direito -->
+    <div class="top-buttons">
+       <a href="index3.html"><button class="btn">Registrar</button>
+      <a href="index2.html"><button class="btn">Entrar</button>
+    </div>
+
+    <!-- Área branca ocupando a tela toda -->
+    <div class="container">
+
+        <div class="logo-area">
+            <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBPnpCet_Z10nUTiV7lG_Y-Mh4X7L6zaRimPJaHLQ5m_RbKTK53Y4d4SuQCErTMkwvsTgHPsYDsI5GUL2nE-LXHKwM_HBwnES_K71d9OiHilOjE=w1920-h911?auditContext=forDisplay" alt="Logo EstudLive">
+        </div>
+
+        <div class="text">
+            <p><strong>O que somos:</strong></p>
+
+            <p>
+                Se está procurando o melhor WebSite de estudos entrou no lugar certo,
+                o EstudLive é um projeto desenvolvido por alunos da 1ª série do
+                Colégio Estadual Dr. Gatão Vidigal, que visa aprimorar e/ou auxiliar no
+                estudo em diferentes matérias do ensino médio.
+            </p>
+        </div>
+
+        <footer>
+            Seu futuro, seu conhecimento
+        </footer>
+
+    </div>
+
+</body>
+</html>

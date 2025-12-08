@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EstudLive - Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #dcdcdc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      background-color: #a5b7d4;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      background-color: white;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 20px;
+      color: white;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      width: 180px;
+      background-color: #8fa0bf;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+    }
+
+    .menu-button {
+      background-color: transparent;
+      border: none;
+      text-align: left;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    .menu-button:hover,
+    .menu-button.active {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content img {
+      max-height: 300px;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="logo">E</div>
+        <span>EstudLive</span>
+      </div>
+      <div class="topbar-right">
+        <h4 style="margin: 0;">00</h4><span>⭐</span>
+        <a href="login.html" style="color: white;">👤</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="sidebar">
+        <button class="menu-button active">Menu</button>
+        <a href="aprender.html"><button class="menu-button">Aprender</button></a>
+        <a href="skins.html"><button class="menu-button">Skins</button></a>
+        <button class="menu-button">Missões</button>
+        <a href="pinguia.html"><button class="menu-button">PinGuai</button></a>
+        <button class="menu-button">Rank</button>
+        <button class="menu-button">Vídeo Curso</button>
+        <button class="menu-button">Meus Cursos</button>
+      </div>
+
+      <div class="content">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.i6dWPVq4M5aLzprabmtHywHaII?pid=Api&P=0&h=220" alt="Imagem carregada">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
