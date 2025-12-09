@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EstudLive - Skins</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #dcdcdc;
+    }
+
+    header {
+      background-color: #8fa0bf;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header .logo-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: white;
+    }
+
+    header .logo span {
+      font-weight: bold;
+      font-size: 18px;
+      color: white;
+    }
+
+    .icone-perfil,
+    .icone-favorito {
+      font-size: 20px;
+      margin-left: 15px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100vh - 50px);
+    }
+
+    .menu-lateral {
+      width: 180px;
+      background-color: #8fa0bf;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+      box-sizing: border-box;
+    }
+
+    .menu-lateral ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu-lateral li {
+      margin: 15px 0;
+      padding: 8px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.3s;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .menu-lateral li:hover,
+    .menu-lateral li.ativo {
+      background-color: #d6938a;
+    }
+
+    .conteudo {
+      flex-grow: 1;
+      padding: 50px;
+      background-color: #a5b7d4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .personagem-principal {
+      margin-top: 50px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .personagem-principal img {
+      width: 120px;
+    }
+
+    .grade-skins {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .skin {
+      background-color: #fffcfc;
+      width: 100px;
+      height: 200px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .skin:hover {
+      transform: scale(1.05);
+    }
+
+    .skin img {
+      width: 110px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="logo-circle">E</div>
+      <span>EstudLive</span>
+    </div>
+    <div>
+      <span class="icone-favorito">⭐</span>
+      <a href="login.html" style="color: white;"><span class="icone-perfil">👤</span></a>
+    </div>
+  </header>
+
+  <div class="container">
+    <nav class="menu-lateral">
+      <ul>
+        <a href="princ.html"><li>Menu</li></a>
+        <a href="aprender.html"><li>Aprender</li></a>
+        <li class="ativo">Skins</li>
+        <li>Missões</li>
+        <a href="pinguia.html"><li>PinGuai</li></a>
+        <li>Rank</li>
+        <li>Vídeo Curso</li>
+        <li>Meus Cursos</li>
+      </ul>
+    </nav>
+
+    <div class="conteudo">
+      <div class="personagem-principal">
+        <img src="https://document-export.canva.com/ryv_o/DAGgCpryv_o/70/thumbnail/0002.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUHWEOTUD6Q%2F20251202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251202T195043Z&X-Amz-Expires=62208&X-Amz-Signature=bf720dfdabd8cf9a34d6a80a46c892bbaf0d2682fe514ea5f2f09b203782a544&X-Amz-SignedHeaders=host&response-expires=Wed%2C%2003%20Dec%202025%2013%3A07%3A31%20GMT" alt="Personagem Principal">
+      </div>
+
+      <div class="grade-skins">
+        <div class="skin"><img src="https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2Fc89eee0f-c158-4159-95e8-0a60fe80effc/watermark:F/width:133?csig=AAAAAAAAAAAAAAAAAAAAAB2F3tefHaxyfy8HIJSrC0WJ-gwp3rekDcs5vuvLgb7J&exp=1764774837&osig=AAAAAAAAAAAAAAAAAAAAADbaJe2wA9FL1i-h2zVrwIeeYUfh1wbA3fpa5tmhiUwj&signer=media-rpc&x-canva-quality=thumbnail" alt="Skin Azul"></div>
+        <div class="skin"><img src="https://media.canva.com/v2/image-resize/format:PNG/height:200/quality:100/uri:ifs%3A%2F%2FM%2Fd05c7f4c-2157-4dfe-b3f8-86b7c457b848/watermark:F/width:133?csig=AAAAAAAAAAAAAAAAAAAAANaJ7B5T-rZNv8ocQ5Wv1wWmyaDHBm_mekkQhgaXLqzK&exp=1764775282&osig=AAAAAAAAAAAAAAAAAAAAAM-LgkjCFUNjATqORU7vZ_4v-cSGZXwZKZ9a1EM-tRXN&signer=media-rpc&x-canva-quality=thumbnail" alt="Skin Rosa"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
