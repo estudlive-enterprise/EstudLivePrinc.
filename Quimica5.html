@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Química – Tabela Periódica</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #a5b7d4;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 200vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #a5b7d4;
+        }
+
+        .topbar {
+            height: 55px;
+            background: #8fa0bf;
+            display: flex;
+            align-items: center;
+            padding: 0 18px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid #4571c4;
+            color: #4571c4;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 240px;
+            background: #8fa0bf;
+            padding: 25px 0;
+        }
+
+        .menu-button {
+            background: none;
+            border: none;
+            padding: 12px 24px;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .menu-button.active,
+        .menu-button:hover {
+            background: #d6938a;
+            border-radius: 10px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background: #f7f9ff;
+        }
+
+        h1, h2, h3 {
+            color: #1f2d55;
+        }
+
+        p {
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 25px;
+            line-height: 1.8;
+        }
+
+        .box-info {
+            background: #e8ecff;
+            padding: 15px;
+            border-left: 5px solid #4571c4;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="topbar">
+        <div class="logo">Q</div>
+        <span>Química • Tabela Periódica</span>
+    </div>
+
+    <div class="main">
+
+        <div class="sidebar">
+      <a href="Quimica.html"><button class="menu-button">Matéria</button></a>
+      <a href="Quimica2.html"><button class="menu-button">Substâncias</button></a>
+      <a href="Quimica3.html"><button class="menu-button">Misturas</button></a>
+      <a href="Quimica4.html"><button class="menu-button">Atomística</button></a>
+      <button class="menu-button active">Tabela Periótica</button></a>
+      <a href="Quimica6.html"><button class="menu-button">Ligações Química</button></a>
+      <a href="Quimica7.html"><button class="menu-button">Funções Química</button></a>
+      <a href="index6.html"><button class="menu-button">voltar</button></a>
+        </div>
+
+        <div class="content">
+
+            <h1>Tabela Periódica</h1>
+
+            <h2>O que é a Tabela Periódica?</h2>
+            <p>
+                A Tabela Periódica é uma organização sistemática dos elementos químicos,
+                baseada no aumento do número atômico (Z).
+                Ela permite identificar padrões e prever propriedades químicas
+                e físicas dos elementos.
+            </p>
+
+            <h2>Períodos e Grupos</h2>
+            <p>
+                Os <strong>períodos</strong> são as linhas horizontais e indicam
+                a quantidade de níveis de energia dos átomos.
+            </p>
+
+            <p>
+                Os <strong>grupos</strong> (ou famílias) são as colunas verticais
+                e reúnem elementos com propriedades químicas semelhantes,
+                pois possuem o mesmo número de elétrons na camada de valência.
+            </p>
+
+            <h2>Classificação dos elementos</h2>
+            <ul>
+                <li><strong>Metais:</strong> bons condutores, maleáveis e dúcteis.</li>
+                <li><strong>Ametais:</strong> maus condutores e muito reativos.</li>
+                <li><strong>Gases nobres:</strong> baixa reatividade.</li>
+                <li><strong>Semimetais:</strong> propriedades intermediárias.</li>
+            </ul>
+
+            <h2>Propriedades periódicas</h2>
+
+            <h3>Raio atômico</h3>
+            <p>
+                O raio atômico indica o tamanho do átomo.
+                Ele aumenta de cima para baixo e da direita para a esquerda.
+            </p>
+
+            <h3>Eletronegatividade</h3>
+            <p>
+                Mede a capacidade de um átomo atrair elétrons.
+                É maior nos ametais, especialmente no flúor.
+            </p>
+
+            <div class="box-info">
+                📌 Essas propriedades são muito cobradas em provas.
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

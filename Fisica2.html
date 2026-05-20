@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termologia</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a5b7d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 200vw;
+      height: 100vh;
+      background-color: #a5b7d4;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background-color: white;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #8fa0bf;
+      padding: 20px 0;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .menu-button.active,
+    .menu-button:hover {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      background-color: #a5b7d4;
+    }
+
+    h1, h2, h3 {
+      color: #2f3138;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo">F</div>
+      <span>Física – Termologia</span>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main">
+
+    <!-- Menu lateral -->
+    <div class="sidebar">
+      <a href="Fisica.html"><button class="menu-button">Mecânica</button></a>
+      <button class="menu-button active">Temperatura</button>
+      <a href="Fisica3.html"><button class="menu-button">Óptica</button></a>
+      <a href="Fisica4.html"><button class="menu-button">Ondulatória</button></a>
+      <a href="Fisica5.html"><button class="menu-button">Eletromagnetismo</button></a>
+      <a href="index6.html"><button class="menu-button">voltar</button></a>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="content">
+
+      <h1>Termologia</h1>
+
+      <h2>O que é Termologia?</h2>
+      <p>
+        A Termologia é o ramo da Física que estuda os fenômenos relacionados
+        à temperatura, ao calor e às transformações de energia térmica.
+        Ela busca explicar como a energia térmica é transferida,
+        como os corpos reagem a essa transferência
+        e quais efeitos isso provoca na matéria.
+      </p>
+
+      <p>
+        Sempre que um corpo aquece, esfria, dilata, muda de estado físico
+        ou troca energia térmica com o ambiente,
+        estamos lidando com conceitos da Termologia.
+      </p>
+
+      <hr>
+
+      <h2>Temperatura</h2>
+      <p>
+        A temperatura é uma grandeza física que indica
+        o <strong>grau de agitação das partículas</strong>
+        de um corpo.
+      </p>
+
+      <p>
+        Quanto maior a energia cinética média das partículas,
+        maior será a temperatura do corpo.
+      </p>
+
+      <h3>Escalas termométricas</h3>
+      <ul>
+        <li>Celsius (°C)</li>
+        <li>Kelvin (K)</li>
+        <li>Fahrenheit (°F)</li>
+      </ul>
+
+      <h3>Conversões</h3>
+      <p>K = °C + 273</p>
+      <p>°F = (°C × 9/5) + 32</p>
+
+      <hr>
+
+      <h2>Calor</h2>
+      <p>
+        Calor é a <strong>energia térmica transferida</strong>
+        entre corpos devido à diferença de temperatura.
+      </p>
+
+      <h3>Calor Sensível</h3>
+      <p>Q = m · c · ΔT</p>
+
+      <h3>Calor Latente</h3>
+      <p>Q = m · L</p>
+
+      <hr>
+
+      <h2>Mudanças de Estado Físico</h2>
+      <ul>
+        <li>Fusão</li>
+        <li>Solidificação</li>
+        <li>Vaporização</li>
+        <li>Condensação</li>
+        <li>Sublimação</li>
+      </ul>
+
+      <h2>Aplicações no Cotidiano</h2>
+      <p>
+        Geladeiras, motores térmicos, aquecedores,
+        climatização de ambientes e estudos climáticos
+        utilizam princípios da Termologia.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

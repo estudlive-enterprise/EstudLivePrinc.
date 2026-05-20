@@ -1,0 +1,361 @@
+<body>
+
+<header>🏆 EstudLive Ranking</header>
+
+<div class="temporada"></div>
+
+<div class="layout">
+
+    <!-- LADO ESQUERDO - RANKING -->
+    <div class="ranking-area">
+        <div class="titulo">
+            <h1>Ranking Geral</h1>
+            <p>Top estudantes da semana</p>
+        </div>
+
+        <div id="rankingContainer"></div>
+    </div>
+
+    <!-- LADO DIREITO - SEU PERFIL -->
+    <div class="perfil-area">
+        <h2>Sua Classificação</h2>
+
+        <div class="liga-box" id="ligaBox">
+            <div class="liga-nome" id="ligaNome"></div>
+
+            <div class="pinguim" id="pinguim">
+                <div class="olho olho1"></div>
+                <div class="olho olho2"></div>
+                <div class="bico"></div>
+            </div>
+
+            <div id="xpInfo"></div>
+
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+
+/* FUNDO */
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+}
+
+/* HEADER */
+header{
+text-align:center;
+padding:25px;
+font-size:28px;
+font-weight:bold;
+background:rgba(0,0,0,0.4);
+}
+
+/* TEMPORADA */
+.temporada{
+text-align:center;
+padding:10px;
+background:rgba(255,255,255,0.08);
+}
+
+/* LAYOUT 2 COLUNAS */
+.layout{
+display:flex;
+gap:30px;
+padding:30px;
+}
+
+/* RANKING */
+.ranking-area{
+flex:2;
+}
+
+.card{
+margin:12px 0;
+padding:15px 20px;
+border-radius:16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-weight:bold;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.02);
+}
+
+.top1{
+background:linear-gradient(90deg,#ffd700,#ffae00);
+box-shadow:0 0 25px #ffd700;
+}
+
+.top2{
+background:linear-gradient(90deg,#c0c0c0,#9e9e9e);
+box-shadow:0 0 20px #c0c0c0;
+}
+
+.top3{
+background:linear-gradient(90deg,#cd7f32,#a0522d);
+box-shadow:0 0 20px #cd7f32;
+}
+
+.normal{
+background:rgba(255,255,255,0.1);
+}
+
+/* PERFIL DIREITA */
+.perfil-area{
+flex:1;
+background:rgba(0,0,0,0.3);
+padding:20px;
+border-radius:20px;
+backdrop-filter:blur(8px);
+text-align:center;
+}
+
+.liga-box{
+padding:20px;
+border-radius:20px;
+transition:0.4s;
+}
+
+.liga-nome{
+font-size:20px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+/* PINGUIM */
+.pinguim{
+width:140px;
+height:170px;
+margin:0 auto 15px;
+border-radius:50% 50% 45% 45%;
+position:relative;
+transition:0.5s;
+}
+
+.olho{
+width:18px;
+height:18px;
+background:white;
+border-radius:50%;
+position:absolute;
+top:50px;
+}
+
+.olho::after{
+content:"";
+width:8px;
+height:8px;
+background:black;
+border-radius:50%;
+position:absolute;
+top:5px;
+left:5px;
+}
+
+.olho1{ left:35px; }
+.olho2{ right:35px; }
+
+.bico{
+width:30px;
+height:18px;
+background:orange;
+border-radius:50%;
+position:absolute;
+top:80px;
+left:50%;
+transform:translateX(-50%);
+}
+
+/* PROGRESSO */
+.progress{
+height:10px;
+background:rgba(255,255,255,0.1);
+border-radius:20px;
+overflow:hidden;
+margin-top:15px;
+}
+
+.progress-bar{
+height:100%;
+background:#00eaff;
+width:0%;
+transition:width 1s ease;
+}
+
+</style>
+
+<script>
+
+/* ========================= */
+/* PEGANDO SEUS DADOS       */
+/* ========================= */
+
+let userXP = parseInt(localStorage.getItem("xp")) || 0;
+let username = localStorage.getItem("username") || "Você";
+
+/* ========================= */
+/* LIGAS COM DIVISÕES       */
+/* ========================= */
+
+const ligas = [
+{ nome:"Carvão", min:0, cor:"#2c2c2c" },
+{ nome:"Ferro", min:200, cor:"#8a8a8a" },
+{ nome:"Jeremejevite", min:400, cor:"#6ed3ff" },
+{ nome:"Fluorite", min:700, cor:"#b36bff" },
+{ nome:"Grandidierite", min:1000, cor:"#1abc9c" },
+{ nome:"Turmalina Paraíba", min:1400, cor:"#00ffe1" },
+{ nome:"Âmbar", min:1800, cor:"#ffbf00" },
+{ nome:"Berilo Vermelho", min:2300, cor:"#ff2e63" },
+{ nome:"Painita", min:3000, cor:"#9b111e" },
+{ nome:"Alexandrite", min:4000, cor:"#7c3aed" }
+];
+
+/* ========================= */
+/* FUNÇÃO PARA DESCOBRIR LIGA */
+/* ========================= */
+
+function getLiga(xp){
+
+    let ligaIndex = 0;
+
+    ligas.forEach((liga,index)=>{
+        if(xp >= liga.min){
+            ligaIndex = index;
+        }
+    });
+
+    let ligaAtual = ligas[ligaIndex];
+
+    /* SISTEMA III, II, I */
+    let divisao = "III";
+
+    if(xp >= ligaAtual.min + 100) divisao = "II";
+    if(xp >= ligaAtual.min + 180) divisao = "I";
+
+    return {
+        nome: ligaAtual.nome + " " + divisao,
+        cor: ligaAtual.cor
+    };
+}
+
+/* ========================= */
+/* LISTA BASE DE JOGADORES  */
+/* ========================= */
+
+let players = [
+    { name: "Ana", xp: 1390 },
+    { name: "Hugo", xp: 1520 },
+    { name: "Lucas", xp: 1280 },
+    { name: "João", xp: 1180 },
+    { name: "Maria", xp: 1120 },
+    { name: "Pedro", xp: 1090 },
+    { name: "Clara", xp: 1020 },
+    { name: "Bruno", xp: 980 }
+];
+
+players.push({ name: username, xp: userXP });
+
+players.sort((a, b) => b.xp - a.xp);
+
+/* ========================= */
+/* ESTILO EXTRA             */
+/* ========================= */
+
+const style = document.createElement("style");
+style.innerHTML = `
+.card{
+    padding:15px;
+    margin:10px auto;
+    max-width:600px;
+    border-radius:14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:bold;
+    background:rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+.card:hover{
+    transform:scale(1.02);
+}
+
+.top1{
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%{box-shadow:0 0 10px gold;}
+    50%{box-shadow:0 0 30px gold;}
+    100%{box-shadow:0 0 10px gold;}
+}
+
+.player-info{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.pinguim-mini{
+    width:28px;
+    height:35px;
+    border-radius:50% 50% 45% 45%;
+    position:relative;
+}
+
+.liga-label{
+    font-size:12px;
+    opacity:0.8;
+}
+`;
+document.head.appendChild(style);
+
+/* ========================= */
+/* GERAR RANKING            */
+/* ========================= */
+
+const container = document.getElementById("rankingContainer");
+
+players.forEach((player, index) => {
+
+    const liga = getLiga(player.xp);
+
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    if(index === 0) card.classList.add("top1");
+
+    const pinguimMini = `
+        <div class="pinguim-mini" 
+             style="background:${liga.cor}">
+        </div>
+    `;
+
+    card.innerHTML = `
+        <div class="player-info">
+            ${pinguimMini}
+            <div>
+                ${index + 1}º - ${player.name}
+                <div class="liga-label">${liga.nome}</div>
+            </div>
+        </div>
+        <span>${player.xp} XP</span>
+    `;
+
+    container.appendChild(card);
+
+});
+
+</script>
+
+</body>

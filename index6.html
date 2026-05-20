@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EstudLive</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #687e9e;
+    }
+
+    header {
+        width: 100%;
+        height: 70px;
+        background-color: #8fa0bf;
+        display: flex;
+        align-items: center;
+        padding-left: 25px;
+        color: white;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    .menu-lateral {
+        width: 210px;
+        background-color: #8fa0bf;
+        height: calc(100vh - 70px);
+        position: fixed;
+        top: 70px;
+        left: 0;
+        padding-top: 55px;
+    }
+
+    .menu-lateral a {
+        display: block;
+        padding: 14px 22px;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background 0.2s;
+    }
+
+    .menu-lateral a:hover,
+    .menu-lateral a.ativo {
+        background-color: #d6938a;
+        border-radius: 6px;
+    }
+
+    .conteudo-principal {
+        margin-left: 210px;
+        height: calc(100vh - 70px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+  .conteudo-principal {
+    margin-left: 210px;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botoes-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.divider {
+    width: 4px;
+    height: 420px;
+    background-color: black;
+    border-radius: 2px;
+}
+
+/* ÁREA DE COLUNAS */
+.grupo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 35px;
+}
+
+/* Botões */
+.botao {
+    background-color: #04B5AF;
+    width: 160px;
+    padding: 12px 12px 15px 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+.botao:hover {
+    background-color: #d6938a;
+}
+
+.botao img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+
+</style>
+</head>
+<body>
+
+<header>EstudLive</header>
+
+<div class="menu-lateral">
+    <a href="index.html">Menu</a>
+    <a href="#" class="ativo">Aprender</a>
+    <a href="index4.html">Skins</a>
+    <a href="missões.html">Missões</a>
+    <a href="index7.html">PinGuia</a>
+    <a href="#">Rank</a>
+    <a href="#">Vídeo Curso</a>
+    <a href="#">Meus Cursos</a>
+</div>
+
+<div class="conteudo-principal">
+    <div class="botoes-container">
+
+        <!-- HUMANAS (lado esquerdo) -->
+        <div class="grupo">
+
+            <a href="português.html">
+                <button class="botao">
+                    <img src="https://img.freepik.com/vetores-gratis/ilustracao-de-lingua-portuguesa-desenhada-a-mao_23-2149834176.jpg" />
+                    Português
+                </button>
+            </a>
+
+            <a href="biologia.html">
+                <button class="botao">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.CMoI7P-KRd4Tn4c73w4IIwHaDt?pid=Api&h=220&P=0" />
+                    Biologia
+                </button>
+            </a>
+
+            <a href="ingles.html">
+                <button class="botao">
+                    <img src="https://cdn.pronunciationpro.com/wp-content/uploads/2018/09/13204614/Image_12.jpeg" />
+                    Inglês
+                </button>
+            </a>
+
+            <a href="filosofia.html">
+                <button class="botao">
+                    <img src="https://filosofiaenlared.com/wp-content/uploads/2024/03/que-es-la-filosofia-resumen_filosofia-ramas_filosofia-etica_moral-metafisica-epistemologia-estetica-pilares_filosofia-1536x878.png" />
+                    Filosofia
+                </button>
+            </a>
+
+            <a href="geografia.html">
+                <button class="botao">
+                    <img src="https://3.bp.blogspot.com/-azVCSrCdN2c/WniBtWOPO7I/AAAAAAAABKo/MjVN5FgCByYOAhQr5pUJVzsWfIYcDa3aQCLcBGAs/s1600/geografia.jpg" />
+                    Geografia
+                </button>
+            </a>
+             <a href="historia.html">
+                <button class="botao">
+                    <img src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/historia-ciencia-que-estuda-os-acontecimentos-passados-acao-homem-no-tempo-5c23497443dd8.jpg" />
+                    história
+                </button>
+            </a>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- EXATAS / TECH (lado direito) -->
+        <div class="grupo">
+
+            <a href="python.html">
+                <button class="botao">
+                    <img src="https://files.cercomp.ufg.br/weby/up/1197/o/1_RJMxLdTHqVBSijKmOO5MAg.jpeg?1631307009" />
+                    Python
+                </button>
+            </a>
+
+            <a href="matematica.html">
+                <button class="botao">
+                    <img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/164EE/production/_109347319_gettyimages-611195980.jpg.webp" />
+                    Matemática
+                </button>
+            </a>
+             <a href="Quimica.html">
+                <button class="botao">
+                    <img src="https://cdn.pixabay.com/photo/2017/11/11/11/30/chemistry-2938901_1280.jpg" />
+                    Química
+                </button>
+            </a>
+             <a href="Fisica.html">
+                <button class="botao">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.dZZ2k6aHSsn7mC5keqeHwQHaEa?pid=Api&h=220&P=0" />
+                    Física
+                </button>
+            </a>
+            
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>EstudLive – Portal</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
+    background-size:400% 400%;
+    animation: gradientBG 18s ease infinite;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+    color:white;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    width:95vw;
+    min-height:95vh;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(18px);
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+    display:flex;
+    flex-direction:column;
+}
+
+.topbar{
+    height:65px;
+    background: rgba(0,0,0,0.4);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 25px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.topbar-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.topbar-right{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.logo{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background: linear-gradient(45deg,#00eaff,#0072ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 0 20px #00eaff;
+}
+
+.main{
+    flex:1;
+    display:flex;
+}
+
+.sidebar{
+    width:240px;
+    background: rgba(0,0,0,0.35);
+    padding:20px 0;
+    display:flex;
+    flex-direction:column;
+}
+
+.menu-button{
+    background:none;
+    border:none;
+    color:white;
+    padding:15px 25px;
+    text-align:left;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:14px;
+}
+
+.menu-button:hover{
+    background: linear-gradient(90deg,#00eaff,#0072ff);
+    transform:translateX(10px);
+    border-radius:0 20px 20px 0;
+}
+
+.sidebar a{
+    text-decoration:none;
+}
+
+.content{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+/* PET */
+.pet-container{
+    position:relative;
+}
+
+.pet-container img{
+    width:700px;
+    transition:0.3s;
+}
+
+.area{
+    position:absolute;
+    cursor:pointer;
+}
+
+.cabeca{
+    width:150px;
+    height:120px;
+    top:40px;
+    left:120px;
+}
+
+.olho{
+    width:60px;
+    height:60px;
+    top:80px;
+    left:170px;
+}
+
+.pe{
+    width:120px;
+    height:100px;
+    bottom:30px;
+    left:150px;
+}
+
+#petMessage{
+    position:absolute;
+    top:-40px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#00eaff;
+    padding:8px 15px;
+    border-radius:20px;
+    color:black;
+    font-weight:bold;
+    box-shadow:0 0 15px #00eaff;
+}
+/* ===== SISTEMA DE XP ===== */
+
+.xp-container{
+    width:250px;
+    height:14px;
+    background:rgba(255,255,255,0.2);
+    border-radius:20px;
+    overflow:hidden;
+    margin-left:15px;
+}
+
+.xp-bar{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#00eaff,#00ff88);
+    border-radius:20px;
+    transition:width 0.6s ease;
+    box-shadow:0 0 10px #00ffcc;
+}
+
+.level{
+    margin-left:15px;
+    font-weight:bold;
+    color:#00ffcc;
+}
+
+/* Animação suave do pet */
+#pet{
+    transition:all 0.4s cubic-bezier(.17,.67,.83,.67);
+}
+
+/* Efeito subir nível */
+.level-up{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:linear-gradient(45deg,#00eaff,#0072ff);
+    padding:30px 50px;
+    border-radius:20px;
+    font-size:28px;
+    font-weight:bold;
+    box-shadow:0 0 40px #00eaff;
+    animation:popLevel 1s ease forwards;
+    z-index:999;
+}
+
+@keyframes popLevel{
+    0%{opacity:0; transform:translate(-50%,-50%) scale(0.5);}
+    50%{opacity:1; transform:translate(-50%,-50%) scale(1.1);}
+    100%{opacity:0; transform:translate(-50%,-50%) scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="logo">E</div>
+    EstudLive
+  </div>
+
+  <div class="topbar-right">
+    <span>00 ⭐</span>
+    <a href="index3.html" style="color:white; text-decoration:none;">👤</a>
+  </div>
+</div>
+
+<div class="main">
+
+<div class="sidebar">
+
+<a href="index.html"><button class="menu-button">Menu</button></a>
+<a href="index6.html"><button class="menu-button">Aprender</button></a>
+<a href="index4.html"><button class="menu-button">Skins</button></a>
+<a href="missoes.html"><button class="menu-button">Missões</button></a>
+<a href="index7.html"><button class="menu-button">PinGuia</button></a>
+<a href="Ranking.html"><button class="menu-button">Rank</button></a>
+<a href="videocurso.html"><button class="menu-button">Vídeo Curso</button></a>
+<a href="meuscursos.html"><button class="menu-button">Meus Cursos</button></a>
+
+</div>
+
+<div class="content">
+
+<div class="pet-container">
+<img src="imagens/banner.png" id="pet" alt="Pet EstudLive">
+
+<div class="area cabeca" onclick="carinho()"></div>
+<div class="area olho" onclick="incomodo()"></div>
+<div class="area pe" onclick="acaoPe()"></div>
+
+<div id="petMessage">Oi! 👋</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+let xp = localStorage.getItem("xp") ? parseInt(localStorage.getItem("xp")) : 0;
+let level = localStorage.getItem("level") ? parseInt(localStorage.getItem("level")) : 1;
+
+const pet = document.getElementById("pet");
+const msg = document.getElementById("petMessage");
+
+createXPBar();
+updateXP();
+
+function createXPBar(){
+    const topRight = document.querySelector(".topbar-right");
+
+    const levelText = document.createElement("span");
+    levelText.className = "level";
+    levelText.id = "levelText";
+    levelText.innerText = "Lv " + level;
+
+    const xpContainer = document.createElement("div");
+    xpContainer.className = "xp-container";
+
+    const xpBar = document.createElement("div");
+    xpBar.className = "xp-bar";
+    xpBar.id = "xpBar";
+
+    xpContainer.appendChild(xpBar);
+
+    topRight.appendChild(levelText);
+    topRight.appendChild(xpContainer);
+}
+
+function addXP(amount){
+    xp += amount;
+
+    if(xp >= 100){
+        xp = xp - 100;
+        level++;
+        showLevelUp();
+    }
+
+    localStorage.setItem("xp", xp);
+    localStorage.setItem("level", level);
+
+    updateXP();
+}
+
+function updateXP(){
+    const xpBar = document.getElementById("xpBar");
+    const levelText = document.getElementById("levelText");
+
+    xpBar.style.width = xp + "%";
+    levelText.innerText = "Lv " + level;
+}
+
+function showLevelUp(){
+    const levelUp = document.createElement("div");
+    levelUp.className = "level-up";
+    levelUp.innerText = "🔥 LEVEL UP! Agora você é nível " + level;
+
+    document.body.appendChild(levelUp);
+
+}
+
+function carinho() {
+    msg.innerText = "Hehe, carinho! 😄 ";
+    pet.style.transform = "scale(1.08)";
+    setTimeout(() => pet.style.transform = "scale(1)", 300);
+   
+}
+
+function incomodo() {
+    msg.innerText = "Ei meu olho! 😖";
+    pet.style.transform = "rotate(-8deg)";
+    setTimeout(() => pet.style.transform = "rotate(0)", 300);
+    
+}
+
+function acaoPe() {
+    msg.innerText = "Batendo as asinhas! 🪽";
+    pet.style.transform = "translateY(-15px)";
+    setTimeout(() => pet.style.transform = "translateY(0)", 400);
+    
+}
+</script>
+
+</body>
+</html>

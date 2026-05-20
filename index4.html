@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EstudLive - Skins</title>
+
+<style>
+
+/* ===================== */
+/* ESTILO GERAL          */
+/* ===================== */
+
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:#2f4a54;
+    color:white;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ===================== */
+/* HEADER                */
+/* ===================== */
+
+header{
+    height:70px;
+    background:#203a43;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 30px;
+    box-sizing:border-box;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+}
+
+.logo-circle{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.top-info{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    font-weight:600;
+}
+
+/* ===================== */
+/* LAYOUT                */
+/* ===================== */
+
+.container{
+    display:flex;
+    height:calc(100vh - 70px);
+}
+
+.menu-lateral{
+    width:220px;
+    background:#294650;
+    padding:30px 20px;
+    box-sizing:border-box;
+}
+
+.menu-lateral ul{
+    list-style:none;
+    padding:0;
+}
+
+.menu-lateral li{
+    padding:10px;
+    border-radius:8px;
+    margin-bottom:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.menu-lateral li:hover,
+.menu-lateral .ativo{
+    background:#00c6ff;
+    color:black;
+}
+
+/* ===================== */
+/* CONTEÚDO              */
+/* ===================== */
+
+.conteudo{
+    flex:1;
+    padding:40px;
+    text-align:center;
+    overflow-y:auto;
+}
+
+/* PERSONAGEM */
+
+.personagem-principal img{
+    width:260px;
+    margin-bottom:40px;
+    transition:0.3s;
+}
+
+.personagem-principal img:hover{
+    transform:scale(1.05);
+}
+
+/* GRID SKINS */
+
+.grade-skins{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    max-width:1000px;
+    margin:0 auto;
+}
+
+/* CARD */
+
+.skin{
+    background:#203a43;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    transition:0.3s;
+}
+
+.skin:hover{
+    transform:translateY(-8px);
+}
+
+.skin img{
+    width:120px;
+    margin-bottom:10px;
+}
+
+.rarity{
+    font-size:12px;
+    opacity:0.7;
+    margin-bottom:10px;
+}
+
+/* BOTÕES */
+
+.skin button{
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-comprar{
+    background:#ff4d4d;
+    color:white;
+}
+
+.btn-equipar{
+    background:#00c6ff;
+    color:black;
+}
+
+.btn-equipado{
+    background:#2ecc71;
+    color:white;
+    cursor:default;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <div class="logo-circle">E</div>
+        EstudLive
+    </div>
+
+    <div class="top-info">
+        <div id="starDisplay">⭐ 0</div>
+        <div>👤</div>
+    </div>
+</header>
+
+<div class="container">
+
+<nav class="menu-lateral">
+<ul>
+<a href="index.html"><li>Menu</li></a>
+<a href="index6.html"><li>Aprender</li></a>
+<li class="ativo">Skins</li>
+<a href="missoes.html"><li>Missões</li></a>
+<li>Rank</li>
+<li>Vídeo Curso</li>
+<li>Meus Cursos</li>
+</ul>
+</nav>
+
+<div class="conteudo">
+
+<div class="personagem-principal">
+<img src="imagens/banner.png" id="mainCharacter">
+</div>
+
+<div class="grade-skins" id="skinsContainer"></div>
+
+</div>
+</div>
+
+<script>
+
+/* ===================== */
+/* SISTEMA DE DADOS      */
+/* ===================== */
+
+let stars = parseInt(localStorage.getItem("stars")) || 0;
+let ownedSkins = JSON.parse(localStorage.getItem("ownedSkins")) || ["banner"];
+let equippedSkin = localStorage.getItem("equippedSkin") || "banner";
+
+document.getElementById("starDisplay").innerText = "⭐ " + stars;
+
+const skins = [
+{ id:"banner", img:"imagens/banner.png", price:0, rarity:"Comum" },
+{ id:"professor", img:"imagens/Professor.png", price:100, rarity:"Rara" },
+{ id:"skin2", img:"imagens/Skin2.png", price:200, rarity:"Épica" },
+{ id:"skin1", img:"imagens/Skin1.png", price:300, rarity:"Lendária" }
+];
+
+/* ===================== */
+/* ATUALIZA PERSONAGEM   */
+/* ===================== */
+
+function updateCharacter(){
+    const skin = skins.find(s=>s.id===equippedSkin);
+    document.getElementById("mainCharacter").src = skin.img;
+}
+
+updateCharacter();
+
+/* ===================== */
+/* RENDER SKINS          */
+/* ===================== */
+
+const container = document.getElementById("skinsContainer");
+
+function renderSkins(){
+
+container.innerHTML="";
+
+skins.forEach(skin=>{
+
+const card = document.createElement("div");
+card.className="skin";
+
+/* COR DA RARIDADE */
+if(skin.rarity==="Rara") card.style.border="3px solid #3aa0ff";
+if(skin.rarity==="Épica") card.style.border="3px solid #a64dff";
+if(skin.rarity==="Lendária") card.style.border="3px solid gold";
+
+const img = document.createElement("img");
+img.src=skin.img;
+
+const rarity = document.createElement("div");
+rarity.className="rarity";
+rarity.innerText=skin.rarity;
+
+const btn = document.createElement("button");
+
+if(ownedSkins.includes(skin.id)){
+
+if(equippedSkin===skin.id){
+btn.innerText="Equipado";
+btn.className="btn-equipado";
+}else{
+btn.innerText="Equipar";
+btn.className="btn-equipar";
+btn.onclick=()=>equipSkin(skin.id);
+}
+
+}else{
+
+btn.innerText="Comprar ("+skin.price+"⭐)";
+btn.className="btn-comprar";
+btn.onclick=()=>buySkin(skin.id,skin.price,card);
+
+}
+
+card.appendChild(img);
+card.appendChild(rarity);
+card.appendChild(btn);
+container.appendChild(card);
+
+});
+
+}
+
+renderSkins();
+
+/* ===================== */
+/* COMPRAR               */
+/* ===================== */
+
+function buySkin(id,price,card){
+
+if(stars<price){
+alert("Estrelas insuficientes!");
+return;
+}
+
+stars-=price;
+ownedSkins.push(id);
+
+localStorage.setItem("stars",stars);
+localStorage.setItem("ownedSkins",JSON.stringify(ownedSkins));
+
+document.getElementById("starDisplay").innerText="⭐ "+stars;
+
+card.style.transform="scale(1.1)";
+card.style.boxShadow="0 0 30px gold";
+
+setTimeout(()=>{
+renderSkins();
+},300);
+
+}
+
+/* ===================== */
+/* EQUIPAR               */
+/* ===================== */
+
+function equipSkin(id){
+
+equippedSkin=id;
+localStorage.setItem("equippedSkin",id);
+
+updateCharacter();
+renderSkins();
+
+}
+
+</script>
+
+</body>
+</html>

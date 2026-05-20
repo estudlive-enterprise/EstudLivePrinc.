@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprenda Física - Mecânica</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a5b7d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 200vw;
+      height: 100vh;
+      background-color: #a5b7d4;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background-color: white;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 180px;
+      background-color: #8fa0bf;
+      padding: 20px 0;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      text-align: left;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .menu-button.active,
+    .menu-button:hover {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      background-color: #a5b7d4;
+    }
+
+    h1, h2, h3 {
+      color: #2f3138;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo">F</div>
+      <span>Aprenda Física</span>
+    </div>
+    <div>01 ⭐</div>
+  </div>
+
+  <div class="main">
+
+    <div class="sidebar">
+      <button class="menu-button active">Mecânica</button>
+      <a href="Fisica2.html"><button class="menu-button">Temperatura</button></a>
+      <a href="Fisica3.html"><button class="menu-button">Óptica</button></a>
+      <a href="Fisica4.html"><button class="menu-button">Ondulatória</button></a>
+      <a href="Fisica5.html"><button class="menu-button">Eletromagnetismo</button></a>
+      <a href="index6.html"><button class="menu-button">voltar</button></a>
+    </div>
+
+    <div class="content">
+
+      <h1>Mecânica</h1>
+
+      <h2>O que é Mecânica?</h2>
+      <p>
+        A Mecânica é o ramo da Física que estuda o movimento, o repouso
+        e as forças que atuam sobre os corpos.
+        Ela explica desde fenômenos simples do cotidiano
+        até movimentos complexos da natureza.
+      </p>
+
+      <p>
+        Sempre que um corpo se move, para, acelera ou sofre uma força,
+        estamos lidando com conceitos da Mecânica.
+      </p>
+
+      <h2>Cinemática</h2>
+      <p>
+        A Cinemática descreve o movimento sem analisar suas causas.
+        Estuda posição, deslocamento, velocidade e aceleração.
+      </p>
+
+      <p><strong>Velocidade média:</strong></p>
+      <p>v = Δs / Δt</p>
+
+      <p><strong>Aceleração média:</strong></p>
+      <p>a = Δv / Δt</p>
+
+      <h2>Dinâmica</h2>
+      <p>
+        A Dinâmica estuda as forças responsáveis pelo movimento.
+        Seu principal fundamento são as Leis de Newton.
+      </p>
+
+      <p><strong>Segunda Lei de Newton:</strong></p>
+      <p>F = m · a</p>
+
+      <h2>Estática</h2>
+      <p>
+        Estuda corpos em equilíbrio, quando a soma das forças é zero.
+        Muito importante para construções e estruturas.
+      </p>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

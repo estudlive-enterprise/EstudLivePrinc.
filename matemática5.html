@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matemática – Estatística</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a5b7d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 200vw;
+      height: 100vh;
+      background-color: #a5b7d4;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background-color: white;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #8fa0bf;
+      padding: 20px 0;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .menu-button.active,
+    .menu-button:hover {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      background-color: #a5b7d4;
+    }
+
+    h1, h2, h3 {
+      color: #2f3138;
+    }
+
+    p {
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    ul {
+      margin-left: 25px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo">M</div>
+      <span>Matemática – Estatística</span>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main">
+
+    <!-- Menu lateral -->
+    <div class="sidebar">
+      <a href="matemática.html"><button class="menu-button">Equações</button></a>
+      <a href="matemática2.html"><button class="menu-button">Funções</button></a>
+      <a href="matemática3.html"><button class="menu-button">Geometria</button></a>
+      <a href="matemática4.html"><button class="menu-button">Conjuntos Numéricos</button></a>
+      <button class="menu-button active">Estatística</button>
+      <a href="index6.html"><button class="menu-button">voltar</button></a>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="content">
+
+      <h1>Estatística</h1>
+
+      <h2>O que é Estatística?</h2>
+      <p>
+        A <strong>Estatística</strong> é a área da matemática que estuda
+        a <strong>coleta, organização, análise e interpretação de dados</strong>.
+        Ela é usada para entender informações, tirar conclusões
+        e tomar decisões.
+      </p>
+
+      <p>
+        No cotidiano, a estatística aparece em pesquisas,
+        notícias, gráficos, notas escolares,
+        resultados de jogos e estudos científicos.
+      </p>
+
+      <hr>
+
+      <h2>População e Amostra</h2>
+
+      <h3>População</h3>
+      <p>
+        É o conjunto de <strong>todos os elementos</strong>
+        que se deseja estudar.
+      </p>
+
+      <h3>Amostra</h3>
+      <p>
+        É uma <strong>parte da população</strong>,
+        escolhida para representar o todo.
+      </p>
+
+      <p>
+        Usar amostras é importante quando a população é muito grande.
+      </p>
+
+      <hr>
+
+      <h2>Tipos de Variáveis</h2>
+
+      <h3>Variável Qualitativa</h3>
+      <p>
+        Representa características que <strong>não são números</strong>.
+      </p>
+
+      <ul>
+        <li>Cor dos olhos</li>
+        <li>Time de futebol</li>
+        <li>Estado civil</li>
+      </ul>
+
+      <h3>Variável Quantitativa</h3>
+      <p>
+        Representa valores numéricos.
+      </p>
+
+      <ul>
+        <li><strong>Discreta:</strong> números inteiros (quantidade de alunos)</li>
+        <li><strong>Contínua:</strong> números reais (altura, peso)</li>
+      </ul>
+
+      <hr>
+
+      <h2>Tabelas Estatísticas</h2>
+      <p>
+        As tabelas estatísticas organizam os dados
+        para facilitar a leitura e interpretação.
+      </p>
+
+      <p>
+        Elas podem apresentar:
+      </p>
+
+      <ul>
+        <li>Frequência absoluta</li>
+        <li>Frequência relativa</li>
+        <li>Porcentagem</li>
+      </ul>
+
+      <hr>
+
+      <h2>Gráficos Estatísticos</h2>
+
+      <h3>Gráfico de Colunas</h3>
+      <p>
+        Usado para comparar dados.
+      </p>
+
+      <h3>Gráfico de Linhas</h3>
+      <p>
+        Usado para analisar evolução ao longo do tempo.
+      </p>
+
+      <h3>Gráfico de Setores (Pizza)</h3>
+      <p>
+        Usado para representar porcentagens.
+      </p>
+
+      <hr>
+
+      <h2>Medidas de Tendência Central</h2>
+
+      <h3>Média Aritmética</h3>
+      <p>
+        Soma de todos os valores dividida pela quantidade de dados.
+      </p>
+
+      <p>
+        Exemplo:
+        <br>
+        (5 + 7 + 8) ÷ 3 = 6,67
+      </p>
+
+      <h3>Moda</h3>
+      <p>
+        É o valor que mais se repete.
+      </p>
+
+      <h3>Mediana</h3>
+      <p>
+        É o valor central dos dados organizados em ordem crescente.
+      </p>
+
+      <hr>
+
+      <h2>Importância da Estatística</h2>
+      <p>
+        A estatística permite interpretar informações,
+        evitar conclusões erradas
+        e compreender dados apresentados em gráficos e tabelas.
+      </p>
+
+      <p>
+        É uma das áreas mais usadas no Enem,
+        vestibulares e na vida real.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

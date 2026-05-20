@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprenda Python</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a5b7d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 200vw;
+      height: 100vh;
+      background-color: #a5b7d4;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      background-color: white;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 20px;
+    }
+
+    .python-icon {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      width: 180px;
+      background-color: #8fa0bf;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+      border-right: 1px solid #ddd;
+    }
+
+    .menu-button {
+      background-color: transparent;
+      border: none;
+      text-align: left;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .menu-button:hover,
+    .menu-button.active {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    h1, h2 {
+      color: hwb(210 21% 62%);
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    code {
+      background-color: #ecf0f1;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    /* Estilo do botão "Próxima Atividade" */
+    .next-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4571c4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+    }
+
+    .next-button:hover {
+      background-color: #365a9c;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Barra superior -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="logo">P</div>
+        <span>Aprenda Python</span>
+      </div>
+
+      <div class="topbar-right">
+        <img class="python-icon" 
+             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png">
+             <div class="topbar-right">
+
+                <h4>00</h4><span>⭐</span>
+                
+                <a href="index3.html">👤</a>
+              </div>
+      </div>
+    </div>
+
+    <!-- Área principal -->
+    <div class="main">
+      <div class="sidebar">
+        <button class="menu-button active">Introdução</button>
+        <button class="menu-button">Sintaxe</button>
+        <button class="menu-button">Variáveis</button>
+        <button class="menu-button">Condicionais</button>
+        <button class="menu-button">Loops</button>
+      </div>
+
+      <div class="content">
+        <h1>Comandos Básicos de Python</h1>
+        <section>
+          <h2>Introdução</h2>
+          <p>Python é uma linguagem de programação de alto nível, interpretada e de fácil leitura. É amplamente utilizada para desenvolvimento web, ciência de dados, inteligência artificial e muito mais.</p>
+        </section>
+        <section>
+          <h2>Sintaxe</h2>
+          <p>A sintaxe do Python é simples e direta. Por exemplo, para imprimir algo na tela, você pode usar:</p>
+          <code>print("Olá, Mundo!")</code>
+        </section>
+        <section>
+          <h2>Variáveis</h2>
+          <p>Em Python, você pode criar variáveis simplesmente atribuindo valores a elas:</p>
+          <code>nome = "João"</code><br>
+          <code>idade = 25</code>
+        </section>
+        <section>
+          <h2>Condicionais</h2>
+          <p>Use estruturas condicionais para tomar decisões no código:</p>
+          <code>
+            if idade >= 18:<br>
+            &nbsp;&nbsp;print("Você é maior de idade")<br>
+            else:<br>
+            &nbsp;&nbsp;print("Você é menor de idade")
+          </code>
+        </section>
+        <section>
+          <h2>Loops</h2>
+          <p>Os loops permitem repetir blocos de código. Por exemplo, um loop <code>for</code>:</p>
+          <code>
+            for i in range(5):<br>
+            &nbsp;&nbsp;print(i)
+          </code>
+        </section>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Botão "Próxima Atividade" -->
+<a href="python2.html">  <button class="next-button">Próxima Atividade</button> </a>
+
+</body>
+</html>

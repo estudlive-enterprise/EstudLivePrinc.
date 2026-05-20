@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biologia – Fundamentos da Vida</title>
+
+<style>
+
+/* FUNDO ANIMADO */
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1e3c72);
+    background-size:400% 400%;
+    animation: gradientBG 18s ease infinite;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+    color:rgb(255, 255, 255);
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    width:95vw;
+    min-height:95vh;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(18px);
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+    display:flex;
+    flex-direction:column;
+}
+
+.topbar{
+    height:65px;
+    background: rgba(0,0,0,0.4);
+    display:flex;
+    align-items:center;
+    padding:0 25px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.logo{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background: linear-gradient(45deg,#00eaff,#0072ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:15px;
+    box-shadow:0 0 20px #00eaff;
+}
+
+.main{
+    flex:1;
+    display:flex;
+}
+
+.sidebar{
+    width:260px;
+    background: rgba(0,0,0,0.35);
+    padding:20px 0;
+    display:flex;
+    flex-direction:column;
+}
+
+.menu-button{
+    text-decoration:none;
+    color:rgb(0, 0, 0);
+    padding:15px 25px;
+    transition:0.3s;
+}
+
+.menu-button:hover{
+    background: linear-gradient(90deg,#00eaff,#0072ff);
+    transform:translateX(10px);
+    border-radius:0 20px 20px 0;
+}
+
+.content{
+    flex:1;
+    padding:40px;
+    overflow-y:auto;
+}
+
+.card{
+    background: rgba(255,255,255,0.12);
+    padding:35px;
+    margin-bottom:35px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:scale(1.02);
+    box-shadow:0 20px 50px rgba(0,0,0,0.7);
+}
+
+h1,h2,h3{
+    color:#00f7ff;
+}
+
+.highlight{
+    color:#00eaff;
+    font-weight:bold;
+}
+
+/* ESQUEMAS VISUAIS */
+.diagram{
+    margin:20px 0;
+    padding:20px;
+    border-left:4px solid #00eaff;
+    background:rgba(0,0,0,0.3);
+    border-radius:10px;
+}
+
+/* LEIA MAIS */
+details{
+    margin-top:15px;
+    background:rgba(0,0,0,0.3);
+    padding:15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="topbar">
+<div class="logo">B</div>
+Biologia – Fundamentos da Vida
+</div>
+
+<div class="main">
+
+<div class="sidebar">
+<button class="menu-button active" data-target="vida">O que é Vida?</button>
+<button class="menu-button" data-target="celular">Organização Celular</button>
+<button class="menu-button" data-target="metabolismo">Metabolismo</button>
+<button class="menu-button" data-target="homeostase">Homeostase</button>
+<button class="menu-button" data-target="evolucao">Evolução</button>
+<button class="menu-button" data-target="importancia">Importância Moderna</button>
+</div>
+
+<div class="content">
+
+<!-- O QUE É VIDA -->
+<div class="card">
+<h1>O que é Vida?</h1>
+
+<p>
+Definir vida é um dos maiores desafios da Biologia, pois não se trata apenas de
+estar "vivo", mas de compreender um conjunto integrado de propriedades que,
+quando presentes simultaneamente, caracterizam um sistema biológico. Vida é
+organização molecular altamente estruturada, baseada principalmente na química
+do carbono, capaz de manter metabolismo próprio, reproduzir-se, responder a
+estímulos, evoluir ao longo do tempo e manter equilíbrio interno.
+</p>
+
+<p>
+Os seres vivos são sistemas abertos, ou seja, trocam matéria e energia com o
+ambiente constantemente. Essa troca é essencial para evitar o aumento da
+entropia interna. De acordo com a Segunda Lei da Termodinâmica, sistemas
+isolados tendem à desordem. A vida, entretanto, mantém organização interna
+à custa de energia externa — como a energia solar ou química — criando e
+mantendo estruturas altamente organizadas, como membranas celulares,
+proteínas e ácidos nucleicos.
+</p>
+
+<p>
+Outro aspecto fundamental da vida é a presença de informação genética.
+O DNA contém instruções para produção de proteínas, que são responsáveis
+por praticamente todas as funções celulares. Essa informação pode ser
+copiada e transmitida, permitindo hereditariedade. Ao longo das gerações,
+pequenas variações (mutações) acumulam-se, possibilitando adaptação e evolução.
+Assim, a vida não é estática: é dinâmica, histórica e transformadora.
+</p>
+
+<p>
+Do ponto de vista evolutivo, a vida surgiu na Terra há aproximadamente
+3,5 bilhões de anos, provavelmente a partir de moléculas orgânicas simples
+que se organizaram em estruturas autorreplicantes. Desde então, a complexidade
+biológica aumentou gradualmente, culminando na enorme biodiversidade atual.
+Portanto, vida é um fenômeno químico, físico e histórico simultaneamente.
+</p>
+</div>
+
+<!-- ORGANIZAÇÃO CELULAR -->
+<div class="card">
+<h2>Organização Celular</h2>
+
+<p>
+A célula é a unidade básica estrutural, funcional e genética dos seres vivos.
+Segundo a Teoria Celular, todos os organismos são formados por células,
+toda célula provém de outra célula preexistente e a célula é a unidade
+fundamental da vida. Essa teoria consolidou a Biologia como ciência moderna,
+pois demonstrou que há uma base comum entre todos os seres vivos.
+</p>
+
+<p>
+Existem dois grandes tipos celulares: procariontes e eucariontes.
+As células procariontes, presentes em bactérias e arqueas,
+não possuem núcleo delimitado por membrana.
+Seu DNA encontra-se na região denominada nucleoide.
+Já as células eucariontes apresentam núcleo verdadeiro
+e diversas organelas membranosas, como mitocôndrias,
+retículo endoplasmático e complexo golgiense.
+Essa compartimentalização permite divisão eficiente de tarefas.
+</p>
+
+<p>
+A membrana plasmática desempenha papel essencial,
+pois controla a entrada e saída de substâncias.
+Ela é formada por uma bicamada fosfolipídica com proteínas inseridas,
+seguindo o modelo do mosaico fluido.
+Essa estrutura garante seletividade e flexibilidade,
+permitindo comunicação celular e manutenção do meio interno.
+</p>
+
+<p>
+Em organismos multicelulares, ocorre diferenciação celular.
+Apesar de possuírem o mesmo DNA, as células expressam genes diferentes,
+resultando em especializações.
+Essa regulação gênica permite formação de tecidos como
+epitelial, muscular, nervoso e conjuntivo,
+cada um com funções específicas no organismo.
+</p>
+</div>
+
+<!-- METABOLISMO -->
+<div class="card">
+<h2>Metabolismo</h2>
+
+<p>
+O metabolismo engloba todas as reações químicas que ocorrem no interior
+das células. Ele pode ser dividido em anabolismo, responsável pela síntese
+de moléculas complexas como proteínas e lipídios, e catabolismo,
+responsável pela degradação de moléculas para liberação de energia.
+Esses dois processos são interdependentes e mantêm equilíbrio dinâmico.
+</p>
+
+<p>
+A respiração celular é um dos principais processos metabólicos.
+Ela ocorre em etapas: glicólise (no citoplasma),
+ciclo de Krebs e cadeia respiratória (na mitocôndria).
+Durante essas etapas, a glicose é oxidada,
+liberando energia que será convertida em ATP.
+O ATP atua como moeda energética universal,
+sendo utilizado em praticamente todas as atividades celulares.
+</p>
+
+<p>
+As enzimas são proteínas que atuam como catalisadores biológicos.
+Elas reduzem a energia de ativação das reações químicas,
+permitindo que ocorram rapidamente em temperatura corporal.
+Cada enzima é específica para determinado substrato,
+formando o chamado complexo enzima-substrato.
+Alterações de temperatura ou pH podem desnaturar enzimas,
+comprometendo o metabolismo.
+</p>
+
+<p>
+Além da respiração, outros processos metabólicos incluem
+fotossíntese, fermentação e síntese proteica.
+Todos esses processos garantem que a célula
+mantenha produção constante de energia e matéria,
+assegurando funcionamento adequado do organismo.
+</p>
+</div>
+
+<!-- HOMEOSTASE -->
+<div class="card">
+<h2>Homeostase</h2>
+
+<p>
+Homeostase é a capacidade que os organismos possuem
+de manter condições internas relativamente constantes,
+mesmo quando o ambiente externo sofre variações.
+Esse equilíbrio envolve controle de temperatura,
+pH sanguíneo, concentração de íons e glicose.
+</p>
+
+<p>
+O controle homeostático ocorre por meio de mecanismos
+de retroalimentação (feedback).
+No feedback negativo, a resposta do organismo reduz o estímulo inicial.
+Por exemplo, se a temperatura corporal aumenta,
+o corpo ativa sudorese e vasodilatação,
+reduzindo a temperatura até níveis normais.
+</p>
+
+<p>
+O sistema nervoso e o sistema endócrino atuam conjuntamente
+na manutenção da homeostase.
+Hormônios como insulina e glucagon regulam níveis de glicose,
+enquanto o hipotálamo controla a temperatura corporal.
+Sem homeostase, enzimas não funcionariam adequadamente,
+levando a falhas metabólicas graves.
+</p>
+
+<p>
+A manutenção do equilíbrio interno é essencial
+para sobrevivência celular e estabilidade do organismo.
+Pequenas variações podem comprometer processos vitais,
+demonstrando a importância do controle fisiológico.
+</p>
+</div>
+
+<!-- EVOLUÇÃO -->
+<div class="card">
+<h2>Evolução Biológica</h2>
+
+<p>
+A evolução biológica explica como as espécies se transformam ao longo do tempo.
+Ela baseia-se na variabilidade genética existente nas populações.
+Essa variabilidade surge por mutações, recombinação gênica
+e reprodução sexuada.
+</p>
+
+<p>
+A seleção natural atua favorecendo indivíduos
+cujas características aumentam chances de sobrevivência
+e reprodução em determinado ambiente.
+Esses indivíduos deixam maior número de descendentes,
+propagando tais características.
+</p>
+
+<p>
+Além da seleção natural, há outros mecanismos evolutivos,
+como deriva genética (alterações aleatórias na frequência gênica)
+e fluxo gênico (migração entre populações).
+A evolução explica desde resistência bacteriana a antibióticos
+até a diversidade de ecossistemas existentes.
+</p>
+
+<p>
+Compreender evolução é compreender que a vida
+é um processo contínuo de adaptação e transformação.
+Nada na Biologia faz sentido senão à luz da evolução.
+</p>
+</div>
+
+<!-- IMPORTÂNCIA -->
+<div class="card">
+<h2>Importância da Biologia no Mundo Atual</h2>
+
+<p>
+A Biologia possui aplicação direta na medicina moderna.
+Estudos celulares permitem desenvolvimento de vacinas,
+antibióticos, terapias gênicas e tratamentos personalizados.
+O conhecimento molecular é essencial para combater doenças.
+</p>
+
+<p>
+Na agricultura, biotecnologia e melhoramento genético
+aumentam produtividade e resistência a pragas.
+Na área ambiental, estudos ecológicos orientam
+políticas de conservação e sustentabilidade.
+</p>
+
+<p>
+Em contexto global, desafios como pandemias,
+mudanças climáticas e perda de biodiversidade
+exigem compreensão profunda dos sistemas biológicos.
+A Biologia conecta ciência, tecnologia e sociedade,
+sendo fundamental para o futuro da humanidade.
+</p>
+
+<p>
+Assim, estudar Biologia não é apenas aprender conteúdos,
+mas compreender os mecanismos que sustentam
+a própria existência da vida no planeta.
+</p>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+const buttons = document.querySelectorAll(".menu-button");
+const sections = document.querySelectorAll(".section");
+
+buttons.forEach(button=>{
+    button.addEventListener("click",()=>{
+
+        buttons.forEach(btn=>btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const target = button.getAttribute("data-target");
+
+        sections.forEach(section=>{
+            section.classList.remove("active");
+        });
+
+        document.getElementById(target).classList.add("active");
+
+        document.querySelector(".content").scrollTop = 0;
+    });
+});
+</script>
+
+</body>
+</html>

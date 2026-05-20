@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Química – Matéria</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a5b7d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 200vw;
+      height: 100vh;
+      background-color: #a5b7d4;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background-color: white;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #8fa0bf;
+      padding: 20px 0;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .menu-button.active,
+    .menu-button:hover {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      background-color: #a5b7d4;
+    }
+
+    h1, h2, h3 {
+      color: #2f3138;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo">Q</div>
+      <span>Química – Matéria</span>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main">
+
+    <!-- Menu lateral -->
+    <div class="sidebar">
+      <button class="menu-button active">Matéria</button>
+      <a href="Quimica2.html"><button class="menu-button">Substâncias</button></a>
+      <a href="Quimica3.html"><button class="menu-button">Misturas</button></a>
+      <a href="Quimica4.html"><button class="menu-button">Atomística</button></a>
+      <a href="Quimica5.html"><button class="menu-button">Tabela Periótica</button></a>
+      <a href="Quimica6.html"><button class="menu-button">Ligações Química</button></a>
+      <a href="Quimica7.html"><button class="menu-button">Funções Química</button></a>
+      <a href="index6.html"><button class="menu-button">voltar</button></a>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="content">
+
+      <h1>Matéria e suas Propriedades</h1>
+
+      <h2>O que é Matéria?</h2>
+      <p>
+        Matéria é tudo aquilo que possui <strong>massa</strong> e
+        ocupa <strong>lugar no espaço</strong>.
+        Essa definição é fundamental para a Química,
+        pois tudo o que é estudado nessa ciência
+        envolve algum tipo de matéria.
+      </p>
+
+      <p>
+        Desde o ar que respiramos até os metais,
+        líquidos, gases, seres vivos e objetos do cotidiano,
+        tudo é formado por matéria.
+        Mesmo aquilo que não conseguimos enxergar,
+        como o oxigênio, ainda assim possui massa
+        e ocupa espaço.
+      </p>
+
+      <hr>
+
+      <h2>Corpo e Objeto</h2>
+      <p>
+        Na Química, é importante diferenciar
+        <strong>corpo</strong> de <strong>objeto</strong>.
+      </p>
+
+      <p>
+        Um <strong>corpo</strong> é qualquer porção limitada de matéria,
+        como um pedaço de ferro, uma quantidade de água
+        ou um bloco de madeira.
+      </p>
+
+      <p>
+        Já um <strong>objeto</strong> é um corpo que possui
+        uma função específica.
+        Uma chave, uma cadeira ou um copo são objetos,
+        pois foram moldados para um uso.
+      </p>
+
+      <hr>
+
+      <h2>Estados Físicos da Matéria</h2>
+      <p>
+        A matéria pode se apresentar em diferentes
+        estados físicos, dependendo da temperatura
+        e da pressão.
+      </p>
+
+      <h3>Estado Sólido</h3>
+      <p>
+        No estado sólido, a matéria possui
+        <strong>forma e volume definidos</strong>.
+        As partículas ficam muito próximas
+        e organizadas, vibrando apenas.
+      </p>
+
+      <h3>Estado Líquido</h3>
+      <p>
+        No estado líquido, a matéria possui
+        <strong>volume definido</strong>,
+        mas não possui forma própria,
+        assumindo a forma do recipiente.
+      </p>
+
+      <h3>Estado Gasoso</h3>
+      <p>
+        No estado gasoso, a matéria não possui
+        forma nem volume definidos.
+        As partículas estão muito afastadas
+        e se movimentam livremente.
+      </p>
+
+      <hr>
+
+      <h2>Propriedades da Matéria</h2>
+
+      <h3>Propriedades Gerais</h3>
+      <p>
+        São características comuns a toda matéria,
+        independentemente de sua composição.
+      </p>
+      <ul>
+        <li>Massa</li>
+        <li>Volume</li>
+        <li>Inércia</li>
+        <li>Impenetrabilidade</li>
+      </ul>
+
+      <h3>Propriedades Específicas</h3>
+      <p>
+        Permitem diferenciar uma substância da outra.
+      </p>
+
+      <p><strong>Físicas:</strong> densidade, ponto de fusão, ponto de ebulição.</p>
+      <p><strong>Químicas:</strong> combustão, oxidação, fermentação.</p>
+
+      <hr>
+
+      <h2>Importância desse conteúdo</h2>
+      <p>
+        O estudo da matéria é a base de toda a Química.
+        Sem compreender esse tema,
+        não é possível avançar para assuntos como
+        reações químicas, ligações químicas
+        e transformações da matéria.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

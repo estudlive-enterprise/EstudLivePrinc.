@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Português – Gramática Avançada</title>
+    <style>
+        body {
+          margin:0;
+          font-family:Arial,Helvetica,sans-serif;
+          background:#d4a5b7;
+          height:100vh;
+          display:flex;
+          justify-content:center;}
+
+        .container {
+          width:200vw;
+          height:100vh;
+          display:flex;
+          flex-direction:column;
+          background:#d4a5b7;
+        }
+
+        .topbar {
+          height:55px;
+          background:#8fa0bf;
+          display:flex;
+          align-items:center;
+          padding:0 18px;
+          box-shadow:0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+          width:32px;
+          height:32px;
+          border-radius:50%;
+          border:2px solid #4571c4;
+          color:#4571c4;
+          background:white;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-weight:bold;
+          margin-right:10px;
+        }
+
+        .main {
+          flex:1;
+          display:flex;
+        }
+
+        .sidebar {
+          width:240px;
+          background:#8fa0bf;
+          padding:25px 0;
+        }
+
+        .menu-button {
+          background:none;
+          border:none;
+          padding:12px 24px;
+          width:100%;
+          text-align:left;
+          font-size:16px;
+          cursor:pointer;
+        }
+
+        .menu-button.active,.menu-button:hover {
+          background:#d6938a;
+          border-radius:10px;
+        }
+
+        .content {
+          flex:1;
+          padding:30px;
+          overflow-y:auto;
+          background:#a5b7d4;
+        }
+
+        h1,h2,h3 {
+          color:#1f2d55;
+        }
+        p {
+          line-height:1.8;
+          text-align:justify;
+        }
+        ul {
+          margin-left:25px;
+          line-height:1.8;
+        }
+        .box-info {
+          background:#e8ecff;
+          padding:15px;
+          border-left:5px solid #4571c4;
+          border-radius:8px;
+          margin:20px 0;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="topbar">
+        <div class="logo">P</div>
+        <span>Português • Gramática Avançada</span>
+    </div>
+
+    <div class="main">
+        <div class="sidebar">
+            <button class="menu-button active">Gramática</button>
+            <a href="português2.html"><button class="menu-button">Ortografia</button></a>
+            <a href="portugues3.html"><button class="menu-button">Literatura</button></a>
+            <a href="portugues4.html"><button class="menu-button">Redação</button></a>
+            <a href="portugues5.html"><button class="menu-button">Interpretação</button></a>
+            <a href="index6.html"><button class="menu-button">voltar</button></a>
+        </div>
+
+        <div class="content">
+            <h1>Gramática – Explicação MUITO aprofundada</h1>
+
+            <h2>1. Fonética e Fonologia</h2>
+            <p>A <strong>fonética</strong> estuda os sons da fala, enquanto a <strong>fonologia</strong> analisa a função desses sons na língua. É fundamental para a correta pronúncia e ortografia.</p>
+            <ul>
+                <li><strong>Fonema:</strong> a menor unidade sonora que distingue palavras (ex.: /p/ em “pato” e /b/ em “bato”).</li>
+                <li><strong>Encontros vocálicos:</strong>
+                    <ul>
+                        <li><strong>Ditongo:</strong> combinação de vogal + semivogal ou semivogal + vogal na mesma sílaba (ex.: <em>pai</em>, <em>céu</em>).</li>
+                        <li><strong>Tritongo:</strong> união de semivogal + vogal + semivogal (ex.: <em>Uruguai</em>).</li>
+                        <li><strong>Hiato:</strong> duas vogais em sílabas diferentes (ex.: <em>sa-ú-de</em>).</li>
+                    </ul>
+                </li>
+                <li><strong>Encontros consonantais:</strong> consoantes juntas, pronunciadas na mesma sílaba ou em sílabas diferentes:
+                    <ul>
+                        <li><em>pr</em> como em <em>praia</em></li>
+                        <li><em>tr</em> como em <em>triste</em></li>
+                        <li>Quando o encontro ocorre em sílabas diferentes, pode gerar hiato ou separação silábica.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="box-info">
+                💡 Dica: entender fonemas ajuda a perceber porque algumas palavras são grafadas com <strong>g</strong> ou <strong>j</strong>, <strong>c</strong> ou <strong>ç</strong>.
+            </div>
+
+            <h2>2. Morfologia – Classes de palavras</h2>
+            <p>A <strong>morfologia</strong> estuda a forma das palavras e suas categorias.</p>
+
+            <h3>2.1 Substantivos</h3>
+            <ul>
+                <li><strong>Comuns:</strong> nomeiam seres de forma geral (<em>cidade, livro</em>).</li>
+                <li><strong>Próprios:</strong> nomeiam seres específicos (<em>Hugo, São Paulo</em>).</li>
+                <li><strong>Concretos:</strong> têm existência própria (<em>casa, carro</em>).</li>
+                <li><strong>Abstratos:</strong> expressam sentimentos, qualidades ou ideias (<em>amor, liberdade</em>).</li>
+                <li><strong>Coletivos:</strong> designam um conjunto de seres da mesma espécie (<em>enxame, arquipélago</em>).</li>
+            </ul>
+
+            <h3>2.2 Adjetivos</h3>
+            <ul>
+                <li>Qualificativos: indicam qualidade ou característica (<em>bonito, alto</em>).</li>
+                <li>Explicativos: reforçam uma característica do substantivo (<em>o fogo ardente</em>).</li>
+                <li>Pátrios: indicam origem (<em>brasileiro, paulista</em>).</li>
+            </ul>
+
+            <h3>2.3 Artigos</h3>
+            <ul>
+                <li>Definidos: <em>o, a, os, as</em></li>
+                <li>Indefinidos: <em>um, uma, uns, umas</em></li>
+                <li>Função: determinam o substantivo, definindo ou generalizando.</li>
+            </ul>
+
+            <h3>2.4 Pronomes</h3>
+            <p>Substituem ou acompanham substantivos:</p>
+            <ul>
+                <li>Pessoais: <em>eu, tu, ele</em></li>
+                <li>Possessivos: <em>meu, teu, nosso</em></li>
+                <li>Demonstrativos: <em>este, aquele</em></li>
+                <li>Indefinidos: <em>alguém, ninguém</em></li>
+                <li>Relativos: <em>que, cujo</em></li>
+                <li>Interrogativos: <em>quem, qual</em></li>
+            </ul>
+
+            <h3>2.5 Verbos</h3>
+            <ul>
+                <li>Conjugação nos tempos: presente, pretérito (perfeito, imperfeito, mais-que-perfeito), futuro.</li>
+                <li>Modos: indicativo (certeza), subjuntivo (possibilidade), imperativo (ordem ou conselho).</li>
+                <li>Regulares e irregulares: atenção às formas irregulares de conjugação (<em>ser, ir, ter</em>).</li>
+                <li>Vozes verbais:
+                    <ul>
+                        <li>Ativa: sujeito realiza a ação (<em>O aluno estudou</em>).</li>
+                        <li>Passiva: sujeito recebe a ação (<em>O conteúdo foi estudado pelo aluno</em>).</li>
+                        <li>Reflexiva: sujeito realiza e recebe a ação (<em>Ele se cortou</em>).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>2.6 Advérbios</h3>
+            <ul>
+                <li>Modos: <em>rapidamente, bem</em></li>
+                <li>Tempo: <em>ontem, agora</em></li>
+                <li>Lugar: <em>aqui, lá</em></li>
+                <li>Intensidade: <em>muito, pouco</em></li>
+                <li>Dúvida: <em>talvez, quiçá</em></li>
+            </ul>
+
+            <h3>2.7 Preposições, conjunções e interjeições</h3>
+            <ul>
+                <li>Preposições: relacionam palavras (<em>de, em, com, para</em>)</li>
+                <li>Conjunções: conectam orações (<em>e, mas, porque</em>)</li>
+                <li>Interjeições: expressam emoção ou reação (<em>oi!, nossa!, ufa!</em>)</li>
+            </ul>
+
+            <h2>3. Sintaxe</h2>
+            <ul>
+                <li>Frase, oração e período: entender a diferença entre enunciado, oração simples e período composto.</li>
+                <li>Tipos de sujeito: simples, composto, oculto, indeterminado</li>
+                <li>Tipos de predicado: verbal, nominal, verbo-nominal</li>
+                <li>Termos essenciais: sujeito e predicado</li>
+                <li>Termos acessórios: adjunto adnominal, adjunto adverbial, aposto, vocativo</li>
+                <li>Complementos verbais: objeto direto, objeto indireto, complemento nominal</li>
+                <li>Concordância verbal e nominal</li>
+                <li>Regência verbal e nominal</li>
+            </ul>
+
+            <div class="box-info">
+                💡 Dica: Dominar cada classe de palavras e a sintaxe é fundamental para escrever bem, interpretar textos e entender Literatura.
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

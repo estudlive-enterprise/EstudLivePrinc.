@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Química – Ligações Químicas</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #a5b7d4;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 200vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #a5b7d4;
+        }
+
+        .topbar {
+            height: 55px;
+            background: #8fa0bf;
+            display: flex;
+            align-items: center;
+            padding: 0 18px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid #4571c4;
+            color: #4571c4;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 240px;
+            background: #8fa0bf;
+            padding: 25px 0;
+        }
+
+        .menu-button {
+            background: none;
+            border: none;
+            padding: 12px 24px;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .menu-button.active,
+        .menu-button:hover {
+            background: #d6938a;
+            border-radius: 10px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background: #f7f9ff;
+        }
+
+        h1, h2, h3 {
+            color: #1f2d55;
+        }
+
+        p {
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 25px;
+            line-height: 1.8;
+        }
+
+        .box-info {
+            background: #e8ecff;
+            padding: 15px;
+            border-left: 5px solid #4571c4;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="topbar">
+        <div class="logo">Q</div>
+        <span>Química • Ligações Químicas</span>
+    </div>
+
+    <div class="main">
+
+        <div class="sidebar">
+        <a href="Quimica.html"><button class="menu-button">Matéria</button></a>
+        <a href="Quimica2.html"><button class="menu-button">Substâncias</button></a>
+        <a href="Quimica3.html"><button class="menu-button">Misturas</button></a>
+        <a href="Quimica4.html"><button class="menu-button">Atomística</button></a>
+        <a href="Quimica5.html"><button class="menu-button">Tabela Periótica</button></a>
+        <button class="menu-button active">Ligações Química</button></a>
+        <a href="Quimica7.html"><button class="menu-button">Funções Química</button></a>
+        <a href="index6.html"><button class="menu-button">voltar</button></a>
+        </div>
+
+        <div class="content">
+
+            <h1>Ligações Químicas</h1>
+
+            <p>As <strong>ligações químicas</strong> são as forças que mantêm os átomos unidos para formar moléculas e compostos. Elas existem porque os átomos “querem” atingir uma <strong>configuração eletrônica estável</strong>, geralmente parecida com a dos gases nobres, o famoso <strong>octeto</strong> (8 elétrons na camada de valência).</p>
+
+            <h2>1. Tipos principais de ligações</h2>
+
+            <h3>1.1 Ligação iônica</h3>
+            <p><strong>O que é:</strong> ocorre entre <strong>metais e ametais</strong>. O metal <strong>perde elétrons</strong> e o ametal <strong>ganha elétrons</strong>, formando <strong>íons</strong>.</p>
+            <p><strong>Exemplo clássico:</strong> NaCl (cloreto de sódio)</p>
+            <ul>
+                <li>Na → perde 1 elétron → Na⁺</li>
+                <li>Cl → ganha 1 elétron → Cl⁻</li>
+                <li>A atração eletrostática entre Na⁺ e Cl⁻ mantém o cristal unido.</li>
+            </ul>
+            <p><strong>Características:</strong></p>
+            <ul>
+                <li>Forma cristais sólidos.</li>
+                <li>Altos pontos de fusão e ebulição.</li>
+                <li>Bons condutores quando dissolvidos em água.</li>
+            </ul>
+            <p><strong>Detalhe avançado:</strong> A energia liberada na formação do cristal chama-se <strong>energia reticular</strong>, e quanto maior, mais estável é o composto.</p>
+
+            <h3>1.2 Ligação covalente</h3>
+            <p><strong>O que é:</strong> ocorre entre <strong>ametais</strong>, que <strong>compartilham elétrons</strong> para completar suas camadas externas.</p>
+            <p><strong>Exemplo:</strong> H₂O (oxigênio compartilha elétrons com 2 hidrogênios)</p>
+            <p><strong>Tipos de ligação covalente:</strong></p>
+            <ul>
+                <li>Simples (uma dupla de elétrons compartilhada): H–H</li>
+                <li>Dupla (duas duplas de elétrons compartilhadas): O=C=O (CO₂)</li>
+                <li>Tripla: N≡N</li>
+            </ul>
+            <p><strong>Covalente polar vs apolar:</strong></p>
+            <ul>
+                <li>Polar: diferença de eletronegatividade (H₂O → O atrai mais os elétrons).</li>
+                <li>Apolar: átomos com eletronegatividades semelhantes (O₂, N₂).</li>
+            </ul>
+
+            <h3>1.3 Ligação metálica</h3>
+            <p><strong>O que é:</strong> ocorre entre átomos de metais, que <strong>doam seus elétrons de valência para um “mar de elétrons” compartilhado</strong>.</p>
+            <p><strong>Exemplo:</strong> Fe, Al, Cu</p>
+            <p><strong>Características:</strong></p>
+            <ul>
+                <li>Bons condutores de eletricidade e calor.</li>
+                <li>Maleáveis e dúcteis.</li>
+            </ul>
+            <p><strong>Detalhe avançado:</strong> explica o brilho metálico e alto ponto de fusão.</p>
+
+            <h3>1.4 Forças intermoleculares</h3>
+            <p>Mesmo que as moléculas já estejam formadas, elas se atraem entre si de algumas maneiras:</p>
+            <ul>
+                <li>Dipolo-dipolo: moléculas polares atraem umas às outras.</li>
+                <li>Ligações de hidrogênio: H ligado a F, O ou N → interage fortemente com outra molécula (H₂O, NH₃, HF).</li>
+                <li>Forças de London (dispersão): atração temporária em moléculas apolares (N₂, O₂).</li>
+            </ul>
+            <div class="box-info">
+                ⚠️ Essas forças explicam pontos de fusão/ebulição de líquidos e sólidos moleculares.
+            </div>
+
+            <h2>2. Conceitos importantes</h2>
+            <ul>
+                <li>Eletronegatividade: capacidade de um átomo de atrair elétrons.</li>
+                <li>Regra do octeto: átomos tendem a ter 8 elétrons na camada externa (exceto H → 2 elétrons).</li>
+                <li>Polaridade da molécula: influencia solubilidade, ponto de fusão, condutividade.</li>
+                <li>Híbridos e ressonância: algumas moléculas têm elétrons “delocalizados”, como no benzeno (C₆H₆).</li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

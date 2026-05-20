@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matemática – Funções</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a5b7d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 200vw;
+      height: 100vh;
+      background-color: #a5b7d4;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background-color: white;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #8fa0bf;
+      padding: 20px 0;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .menu-button.active,
+    .menu-button:hover {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      background-color: #a5b7d4;
+    }
+
+    h1, h2, h3 {
+      color: #2f3138;
+    }
+
+    p {
+      line-height: 1.8;
+      text-align: justify;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo">M</div>
+      <span>Matemática – Funções</span>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main">
+
+    <!-- Menu lateral -->
+    <div class="sidebar">
+      <a href="matemática.html"><button class="menu-button">Equações</button></a>
+      <button class="menu-button active">Funções</button></a>
+      <a href="matemática3.html"><button class="menu-button">Geometria</button></a>
+      <a href="matemática4.html"><button class="menu-button">Conjuntos Numéricos</button></a>
+     <a href="matemática5.html"><button class="menu-button">Estatística</button></a>
+      <a href="index6.html"><button class="menu-button">voltar</button></a>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="content">
+
+      <h1>Funções</h1>
+
+      <h2>O que é uma Função?</h2>
+      <p>
+        Em matemática, uma <strong>função</strong> é uma regra que associa
+        cada elemento de um conjunto inicial a
+        <strong>um único elemento</strong> de outro conjunto.
+      </p>
+
+      <p>
+        Em outras palavras: para cada valor de <strong>x</strong>,
+        existe apenas um valor correspondente de <strong>y</strong>.
+      </p>
+
+      <hr>
+
+      <h2>Domínio, Contradomínio e Imagem</h2>
+
+      <p>
+        Toda função é formada por três partes fundamentais:
+      </p>
+
+      <h3>Domínio</h3>
+      <p>
+        É o conjunto de todos os valores que podem ser atribuídos à variável
+        independente (geralmente o <strong>x</strong>).
+      </p>
+
+      <h3>Contradomínio</h3>
+      <p>
+        É o conjunto que contém todos os valores que <em>podem</em> ser
+        resultado da função.
+      </p>
+
+      <h3>Imagem</h3>
+      <p>
+        É o conjunto formado pelos valores que realmente aparecem
+        como resultado da função.
+      </p>
+
+      <hr>
+
+      <h2>Representação de uma Função</h2>
+      <p>
+        Uma função pode ser representada de várias formas:
+      </p>
+
+      <ul>
+        <li>Por fórmula matemática: <strong>f(x) = 2x + 1</strong></li>
+        <li>Por tabela de valores</li>
+        <li>Por gráfico no plano cartesiano</li>
+        <li>Por diagrama de setas</li>
+      </ul>
+
+      <hr>
+
+      <h2>Função Afim (Função do 1º Grau)</h2>
+      <p>
+        A função afim é a função mais importante do 1º ano do Ensino Médio.
+      </p>
+
+      <p>
+        Sua forma geral é:
+        <br>
+        <strong>f(x) = ax + b</strong>
+      </p>
+
+      <ul>
+        <li><strong>a</strong> → coeficiente angular (inclinação da reta)</li>
+        <li><strong>b</strong> → coeficiente linear (onde a reta corta o eixo y)</li>
+      </ul>
+
+      <hr>
+
+      <h2>Coeficiente Angular (a)</h2>
+      <p>
+        O coeficiente angular indica se a função é:
+      </p>
+
+      <ul>
+        <li><strong>Crescente:</strong> a &gt; 0</li>
+        <li><strong>Decrescente:</strong> a &lt; 0</li>
+        <li><strong>Constante:</strong> a = 0</li>
+      </ul>
+
+      <hr>
+
+      <h2>Gráfico da Função Afim</h2>
+      <p>
+        O gráfico de uma função afim é sempre uma <strong>reta</strong>.
+      </p>
+
+      <p>
+        Para construir o gráfico:
+      </p>
+
+      <ol>
+        <li>Escolha dois valores para x</li>
+        <li>Calcule os valores de y</li>
+        <li>Marque os pontos no plano cartesiano</li>
+        <li>Ligue os pontos com uma reta</li>
+      </ol>
+
+      <hr>
+
+      <h2>Importância das Funções</h2>
+      <p>
+        Funções são usadas para modelar situações do cotidiano,
+        como crescimento populacional, gastos, velocidade,
+        temperatura e economia.
+      </p>
+
+      <p>
+        Elas são a base para conteúdos mais avançados como
+        função quadrática, exponencial e logarítmica.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

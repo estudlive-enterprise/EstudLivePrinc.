@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matemática – Equações e Fatoração</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a5b7d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 200vw;
+      height: 100vh;
+      background-color: #a5b7d4;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background-color: white;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #8fa0bf;
+      padding: 20px 0;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .menu-button.active,
+    .menu-button:hover {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      background-color: #a5b7d4;
+    }
+
+    h1, h2, h3 {
+      color: #2f3138;
+    }
+
+    p {
+      line-height: 1.8;
+      text-align: justify;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo">M</div>
+      <span>Matemática – Equações e Fatoração</span>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main">
+
+    <!-- Menu lateral -->
+    <div class="sidebar">
+      <button class="menu-button active">Equações</button>
+      <a href="matemática2.html"><button class="menu-button">Funções</button></a>
+      <a href="matemática3.html"><button class="menu-button">Geometria</button></a>
+      <a href="matemática4.html"><button class="menu-button">Conjuntos Numéricos</button></a>
+      <a href="matemática5.html"><button class="menu-button">Estatística</button></a>
+      <a href="index6.html"><button class="menu-button">voltar</button></a>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="content">
+
+      <h1>Equações e Fatoração</h1>
+
+      <h2>O que é uma Equação?</h2>
+      <p>
+        Uma <strong>equação</strong> é uma igualdade matemática que contém
+        um ou mais valores desconhecidos, chamados de
+        <strong>incógnitas</strong>, geralmente representadas por letras,
+        como x, y ou z.
+      </p>
+
+      <p>
+        Resolver uma equação significa descobrir qual valor torna
+        a igualdade verdadeira, ou seja, faz os dois lados terem
+        o mesmo resultado.
+      </p>
+
+      <hr>
+
+      <h2>Equação do 1º Grau</h2>
+      <p>
+        Uma equação do primeiro grau é aquela em que a incógnita
+        aparece elevada apenas à potência 1.
+      </p>
+
+      <p>
+        Forma geral:
+        <br>
+        <strong>ax + b = 0</strong>, com a ≠ 0
+      </p>
+
+      <p>
+        Para resolver esse tipo de equação, devemos isolar a incógnita,
+        realizando as mesmas operações nos dois lados da igualdade.
+      </p>
+
+      <h3>Exemplo</h3>
+      <p>
+        2x + 6 = 14
+        <br>
+        2x = 14 − 6
+        <br>
+        2x = 8
+        <br>
+        x = 4
+      </p>
+
+      <hr>
+
+      <h2>Equações com Frações</h2>
+      <p>
+        Quando uma equação apresenta frações, o método mais eficiente
+        é eliminar os denominadores multiplicando todos os termos
+        pelo mínimo múltiplo comum (MMC).
+      </p>
+
+      <p>
+        Exemplo:
+        <br>
+        x/2 + 3 = 7
+        <br>
+        x + 6 = 14
+        <br>
+        x = 8
+      </p>
+
+      <hr>
+
+      <h2>O que é Fatoração?</h2>
+      <p>
+        Fatoração é o processo de transformar uma expressão algébrica
+        em um <strong>produto de fatores</strong>.
+      </p>
+
+      <p>
+        Ela é essencial para simplificar expressões, resolver equações
+        e estudar funções.
+      </p>
+
+      <hr>
+
+      <h2>Fator Comum em Evidência</h2>
+      <p>
+        Ocorre quando existe um fator que se repete em todos os termos
+        da expressão.
+      </p>
+
+      <p>
+        Exemplo:
+        <br>
+        3x + 6 = 3(x + 2)
+      </p>
+
+      <hr>
+
+      <h2>Diferença de Quadrados</h2>
+      <p>
+        É uma fatoração especial que ocorre quando temos a subtração
+        de dois quadrados perfeitos.
+      </p>
+
+      <p>
+        Forma geral:
+        <br>
+        a² − b² = (a − b)(a + b)
+      </p>
+
+      <p>
+        Exemplo:
+        <br>
+        x² − 16 = (x − 4)(x + 4)
+      </p>
+
+      <hr>
+
+      <h2>Importância desse conteúdo</h2>
+      <p>
+        Equações e fatoração são a base da matemática do ensino médio.
+        Elas aparecem em funções, equações do 2º grau, geometria analítica
+        e em praticamente todos os conteúdos seguintes.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

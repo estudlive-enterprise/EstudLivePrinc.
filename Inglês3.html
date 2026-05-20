@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprenda Inglês - Estruturas Essenciais</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a5b7d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 200vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background-color: white;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 180px;
+      background-color: #8fa0bf;
+      padding: 20px 0;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      text-align: left;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .menu-button.active,
+    .menu-button:hover {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      background-color: #a5b7d4;
+    }
+
+    h1, h2, h3 {
+      color: #2f3138;
+    }
+
+    p {
+      line-height: 1.8;
+      margin-top: 15px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-top: 15px;
+      width: 80%;
+    }
+
+    table, th, td {
+      border: 1px solid #2f3138;
+      padding: 8px;
+      text-align: left;
+    }
+
+    code {
+      background-color: #f0f0f0;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo">E</div>
+      <span>Aprenda Inglês</span>
+    </div>
+    <div>⭐ 03</div>
+  </div>
+
+  <div class="main">
+
+    <div class="sidebar">
+      <a href="verb-to-be.html"><button class="menu-button">Verb To Be</button></a>
+      <a href="simple-present.html"><button class="menu-button">Tempos Verbais Fundamentais</button></a>
+      <a href="modal-verbs.html"><button class="menu-button active">Estruturas Essenciais</button></a>
+      <a href="there-is.html"><button class="menu-button">There is / There are</button></a>
+      <a href="quantifiers.html"><button class="menu-button">Quantifiers</button></a>
+      <a href="comparatives.html"><button class="menu-button">Comparatives & Superlatives</button></a>
+      <a href="index.html"><button class="menu-button">Voltar</button></a>
+    </div>
+
+    <div class="content">
+
+<h1>ESTRUTURAS ESSENCIAIS DA LÍNGUA INGLESA</h1>
+
+<h2>1. MODAL VERBS – Função e Estrutura</h2>
+<p>
+Os <strong>modal verbs</strong> são verbos auxiliares que modificam o significado do verbo principal, expressando habilidade, possibilidade, permissão, obrigação, conselho ou probabilidade.
+</p>
+
+<p>Principais modais: <code>can, could, may, might, must, should, will, would</code></p>
+
+<p>Estrutura: <br>
+<strong>Sujeito + modal + verbo na forma base</strong></p>
+
+<table>
+  <tr><th>Exemplo</th><th>Significado</th></tr>
+  <tr><td>I can swim.</td><td>Habilidade presente</td></tr>
+  <tr><td>She must study.</td><td>Obrigação</td></tr>
+  <tr><td>You should sleep earlier.</td><td>Conselho</td></tr>
+</table>
+
+<p>Importante: Após o modal, o verbo principal <strong>não recebe “to” nem terminações como -s ou -ed</strong>.</p>
+
+<h3>Uso de Can e Could</h3>
+<ul>
+  <li><strong>Can:</strong> habilidade ou permissão no presente. Ex.: I can speak English.</li>
+  <li><strong>Could:</strong> habilidade no passado ou possibilidade. Ex.: She could run fast. It could rain tomorrow.</li>
+</ul>
+
+<h3>Uso de Must e Should</h3>
+<ul>
+  <li><strong>Must:</strong> obrigação forte. Ex.: You must wear a helmet.</li>
+  <li><strong>Should:</strong> conselho ou recomendação. Ex.: You should drink more water.</li>
+  <li>Negativa de must: <code>must not</code> indica proibição. Ex.: You must not smoke here.</li>
+</ul>
+
+<h2>2. THERE IS / THERE ARE – Existência</h2>
+<p>
+Usamos <strong>there is</strong> e <strong>there are</strong> para indicar existência, equivalendo a "há" ou "existe".
+</p>
+
+<table>
+  <tr><th>Forma</th><th>Exemplo</th></tr>
+  <tr><td>There is</td><td>There is a book on the table.</td></tr>
+  <tr><td>There are</td><td>There are many students in the room.</td></tr>
+  <tr><td>Negativa</td><td>There isn't / There aren't</td></tr>
+  <tr><td>Interrogativa</td><td>Is there a problem? / Are there any questions?</td></tr>
+</table>
+
+<h2>3. QUANTIFIERS – Expressando Quantidade</h2>
+<p>
+Os <strong>quantifiers</strong> indicam quantidade e variam conforme o substantivo seja contável ou incontável.
+</p>
+
+<h3>Some e Any</h3>
+<ul>
+  <li><strong>Some:</strong> usado em frases afirmativas. Ex.: I have some friends.</li>
+  <li><strong>Any:</strong> usado em negativas e interrogativas. Ex.: I don't have any money. Do you have any questions?</li>
+</ul>
+
+<h3>Much e Many</h3>
+<ul>
+  <li><strong>Many:</strong> para substantivos contáveis. Ex.: Many students are here.</li>
+  <li><strong>Much:</strong> para substantivos incontáveis. Ex.: Much water was wasted.</li>
+</ul>
+
+<h3>A lot of</h3>
+<p>A lot of pode ser usado com contáveis e incontáveis: A lot of people. A lot of information.</p>
+
+<h2>4. Diferenças Importantes e Erros Comuns</h2>
+<ul>
+  <li>Errado: "There have many people." ❌ | Correto: "There are many people." ✅</li>
+  <li>Errado: "He can to swim." ❌ | Correto: "He can swim." ✅</li>
+</ul>
+
+<h2>5. Importância Estrutural</h2>
+<p>
+Modal verbs expressam intenção e atitude;  
+There is/are organiza a descrição de ambientes;  
+Quantifiers detalham quantidade.  
+</p>
+
+<p>
+Dominar essas estruturas é essencial para fluência básica sólida, leitura, escrita, conversação e compreensão de textos.
+</p>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

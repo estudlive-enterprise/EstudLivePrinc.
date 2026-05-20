@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EstudLive - PinGuia</title>
+
+<style>
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #dcdcdc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #a5b7d4;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== TOPO ===== */
+.topbar {
+  height: 50px;
+  background-color: #8fa0bf;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #4571c4;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* ===== MAIN ===== */
+.main {
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+
+/* ===== MENU ===== */
+.sidebar {
+  width: 180px;
+  background-color: #8fa0bf;
+  padding: 20px 0;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-button:hover,
+.menu-button.active {
+  background-color: #d6938a;
+  border-radius: 8px;
+}
+
+/* ===== PIN GUIA ===== */
+.pinguia {
+  position: absolute;
+  bottom: 120px;
+  right: 40px;
+  width: 160px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.pinguia img {
+  width: 100%;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* ===== CHAT ===== */
+.chat-box {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  min-height: 40px;
+}
+
+.input-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 71%;
+}
+
+
+.input-container input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- TOPO -->
+  <div class="topbar">
+    <div style="display:flex;gap:10px;align-items:center;">
+      <div class="logo">E</div>
+      <strong>EstudLive</strong>
+    </div>
+    <div><span id="stars">10</span> ⭐ 👤</div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- MENU -->
+    <div class="sidebar">
+      <button class="menu-button">Menu</button>
+      <button class="menu-button">Aprender</button>
+      <button class="menu-button">Skins</button>
+      <button class="menu-button active">PinGuia</button>
+      <button class="menu-button">Rank</button>
+    </div>
+
+    <!-- PIN GUIA -->
+    <div class="pinguia">
+      <img id="pinguiaImg" src="imagens/pinguia-normal.png">
+    </div>
+
+    <!-- CHAT -->
+    <div class="chat-box" id="chat">
+      Oi! Eu sou o PinGuia 🐧
+    </div>
+
+    <!-- INPUT -->
+    <div class="input-container">
+      <input id="entrada" placeholder="Pergunte algo...">
+    </div>
+
+  </div>
+</div>
+<script>
+const input = document.getElementById("entrada");
+const chat = document.getElementById("chat");
+const stars = document.getElementById("stars");
+const pinguia = document.getElementById("pinguiaImg");
+
+/* ===== ESTADO DA IA ===== */
+let estado = {
+  materia: "",
+  pergunta: 0,
+  pontos: 0,
+  aguardandoResposta: false
+};
+
+/* ===== BANCO DE PERGUNTAS ===== */
+const perguntas = {
+  matematica: [
+    { q: "Quanto é 2 + 2?", r: "4", e: "Somar é juntar quantidades." },
+    { q: "Quanto é 5 + 3?", r: "8", e: "5 mais 3 resulta em 8." },
+    { q: "Quanto é 10 - 4?", r: "6", e: "Subtrair é retirar." },
+    { q: "Quanto é 3 x 3?", r: "9", e: "Multiplicação é soma repetida." },
+    { q: "Quanto é 8 ÷ 2?", r: "4", e: "Dividir é repartir igualmente." },
+    { q: "O dobro de 6?", r: "12", e: "Dobro é multiplicar por 2." },
+    { q: "A metade de 10?", r: "5", e: "Metade é dividir por 2." },
+    { q: "Número par é divisível por?", r: "2", e: "Todo número par divide por 2." },
+    { q: "Quanto é 7 + 1?", r: "8", e: "Soma simples." },
+    { q: "Quanto é 9 - 3?", r: "6", e: "Subtração básica." }
+  ],
+
+  portugues: [
+    { q: "O que é um substantivo?", r: "nome", e: "Nomeia seres, objetos ou ideias." },
+    { q: "O que é um verbo?", r: "ação", e: "Indica ação ou estado." },
+    { q: "O que é um adjetivo?", r: "qualidade", e: "Caracteriza o substantivo." },
+    { q: "O que é sujeito?", r: "quem", e: "Quem pratica a ação." },
+    { q: "O que é predicado?", r: "ação", e: "O que se fala do sujeito." },
+    { q: "Sinônimo é palavra de sentido?", r: "parecido", e: "Sentido semelhante." },
+    { q: "Antônimo é palavra de sentido?", r: "oposto", e: "Sentido contrário." },
+    { q: "Frase precisa ter sentido?", r: "sim", e: "Frase tem sentido completo." },
+    { q: "Plural indica?", r: "mais de um", e: "Quantidade maior que um." },
+    { q: "Singular indica?", r: "um", e: "Apenas um." }
+  ],
+
+  quimica: [
+    { q: "O que é matéria?", r: "massa", e: "Tem massa e ocupa espaço." },
+    { q: "Menor parte da matéria?", r: "átomo", e: "Base de tudo." },
+    { q: "Água é H2O?", r: "sim", e: "2 hidrogênios e 1 oxigênio." },
+    { q: "Estado sólido tem forma?", r: "sim", e: "Forma definida." },
+    { q: "Estado gasoso tem forma?", r: "não", e: "Forma variável." },
+    { q: "Oxigênio é elemento?", r: "sim", e: "Elemento químico." },
+    { q: "Mistura é união de?", r: "substâncias", e: "Mais de uma substância." },
+    { q: "Reação química causa?", r: "transformação", e: "Mudança da matéria." },
+    { q: "Ar é mistura?", r: "sim", e: "Vários gases." },
+    { q: "Água é substância pura?", r: "sim", e: "Composição fixa." }
+  ],
+
+  filosofia: [
+    { q: "Quem foi Sócrates?", r: "filósofo", e: "Filósofo grego." },
+    { q: "Platão foi aluno de?", r: "sócrates", e: "Discípulo direto." },
+    { q: "Aristóteles foi aluno de?", r: "platão", e: "Aluno de Platão." },
+    { q: "O que é ética?", r: "moral", e: "Estudo do certo e errado." },
+    { q: "Filosofia busca?", r: "pensar", e: "Refletir sobre a vida." },
+    { q: "Pensar criticamente é?", r: "questionar", e: "Não aceitar tudo." },
+    { q: "O que é verdade?", r: "realidade", e: "O que corresponde ao real." },
+    { q: "Liberdade é poder?", r: "escolher", e: "Capacidade de decisão." },
+    { q: "Conhecimento vem de?", r: "aprendizado", e: "Aprender e entender." },
+    { q: "Filosofia nasceu na?", r: "grécia", e: "Grécia Antiga." }
+  ]
+};
+
+/* ===== MOTOR DE CONVERSA ===== */
+input.addEventListener("keydown", function(e) {
+  if (e.key !== "Enter") return;
+
+  let texto = input.value.toLowerCase().trim();
+
+  /* ESCOLHA DA MATÉRIA */
+  if (!estado.aguardandoResposta) {
+    if (perguntas[texto]) {
+      estado.materia = texto;
+      estado.pergunta = 0;
+      estado.aguardandoResposta = true;
+      chat.innerText = "Legal 😄 Vamos começar!\n\n" + perguntas[texto][0].q;
+      pinguia.src = "imagens/pinguia-feliz.png";
+      input.value = "";
+      return;
+    }
+    chat.innerText = "Escolha uma matéria: matemática, português, química ou filosofia 📚";
+    input.value = "";
+    return;
+  }
+
+  /* VERIFICAR RESPOSTA */
+  let atual = perguntas[estado.materia][estado.pergunta];
+
+  if (texto === atual.r) {
+    estado.pergunta++;
+    estado.pontos++;
+    stars.innerText = Number(stars.innerText) + 1;
+    pinguia.src = "imagens/pinguia-feliz.png";
+
+    if (estado.pergunta >= perguntas[estado.materia].length) {
+      chat.innerText = "🎉 Mandou muito bem! Você terminou " + estado.materia + "!";
+      estado.aguardandoResposta = false;
+      pinguia.src = "imagens/pinguia-orgulho.png";
+    } else {
+      chat.innerText = "✅ Certo!\n\n" + perguntas[estado.materia][estado.pergunta].q;
+    }
+
+  } else {
+    chat.innerText = "❌ Quase!\nDica: " + atual.e;
+    pinguia.src = "imagens/pinguia-pensando.png";
+  }
+
+  input.value = "";
+});
+</script>
+
+
+
+</script>
+
+</body>
+</html>

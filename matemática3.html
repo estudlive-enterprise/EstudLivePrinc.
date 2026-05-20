@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matemática – Geometria Plana</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a5b7d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 200vw;
+      height: 100vh;
+      background-color: #a5b7d4;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background-color: white;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #8fa0bf;
+      padding: 20px 0;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .menu-button.active,
+    .menu-button:hover {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      background-color: #a5b7d4;
+    }
+
+    h1, h2, h3 {
+      color: #2f3138;
+    }
+
+    p {
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    ul {
+      margin-left: 25px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo">M</div>
+      <span>Matemática – Geometria Plana</span>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main">
+
+    <!-- Menu lateral -->
+    <div class="sidebar">
+      <a href="matemática.html"><button class="menu-button">Equações</button></a>
+      <a href="matemática2.html"><button class="menu-button">Funções</button></a>
+      <button class="menu-button active">Geometria</button>
+      <a href="matemática4.html"><button class="menu-button">Conjuntos Numéricos</button></a>
+      <a href="matemática5.html"><button class="menu-button">Estatística</button></a>
+      <a href="index6.html"><button class="menu-button">voltar</button></a>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="content">
+
+      <h1>Geometria Plana</h1>
+
+      <h2>O que é Geometria Plana?</h2>
+      <p>
+        A <strong>Geometria Plana</strong> é a área da matemática que estuda
+        as figuras que estão em um plano, ou seja,
+        figuras que possuem apenas <strong>duas dimensões</strong>:
+        comprimento e largura.
+      </p>
+
+      <p>
+        Nesse tipo de geometria, não existe profundidade.
+        Exemplos clássicos são: triângulos, quadrados, retângulos,
+        círculos e polígonos em geral.
+      </p>
+
+      <hr>
+
+      <h2>Ponto, Reta e Plano</h2>
+
+      <h3>Ponto</h3>
+      <p>
+        O ponto não possui tamanho, forma ou dimensão.
+        Ele apenas indica uma posição no espaço.
+      </p>
+
+      <h3>Reta</h3>
+      <p>
+        A reta é formada por infinitos pontos
+        e se estende infinitamente em duas direções.
+      </p>
+
+      <h3>Plano</h3>
+      <p>
+        O plano é uma superfície infinita,
+        onde estão contidas todas as figuras da geometria plana.
+      </p>
+
+      <hr>
+
+      <h2>Ângulos</h2>
+      <p>
+        Um ângulo é formado pelo encontro de duas semirretas
+        que possuem a mesma origem.
+      </p>
+
+      <ul>
+        <li><strong>Ângulo agudo:</strong> menor que 90°</li>
+        <li><strong>Ângulo reto:</strong> igual a 90°</li>
+        <li><strong>Ângulo obtuso:</strong> maior que 90° e menor que 180°</li>
+        <li><strong>Ângulo raso:</strong> igual a 180°</li>
+      </ul>
+
+      <hr>
+
+      <h2>Polígonos</h2>
+      <p>
+        Polígonos são figuras planas fechadas,
+        formadas apenas por segmentos de reta.
+      </p>
+
+      <h3>Classificação</h3>
+      <ul>
+        <li>Triângulo – 3 lados</li>
+        <li>Quadrilátero – 4 lados</li>
+        <li>Pentágono – 5 lados</li>
+        <li>Hexágono – 6 lados</li>
+      </ul>
+
+      <hr>
+
+      <h2>Triângulos</h2>
+      <p>
+        O triângulo é o polígono mais simples e importante
+        da geometria plana.
+      </p>
+
+      <h3>Classificação quanto aos lados</h3>
+      <ul>
+        <li><strong>Equilátero:</strong> três lados iguais</li>
+        <li><strong>Isósceles:</strong> dois lados iguais</li>
+        <li><strong>Escaleno:</strong> três lados diferentes</li>
+      </ul>
+
+      <h3>Classificação quanto aos ângulos</h3>
+      <ul>
+        <li>Acutângulo</li>
+        <li>Retângulo</li>
+        <li>Obtusângulo</li>
+      </ul>
+
+      <hr>
+
+      <h2>Perímetro</h2>
+      <p>
+        O <strong>perímetro</strong> é a soma de todos os lados
+        de uma figura plana.
+      </p>
+
+      <p>
+        Exemplo:
+        <br>
+        Um quadrado de lado 5 cm tem perímetro:
+        <br>
+        5 + 5 + 5 + 5 = 20 cm
+      </p>
+
+      <hr>
+
+      <h2>Área</h2>
+      <p>
+        A <strong>área</strong> representa a medida da superfície
+        de uma figura plana.
+      </p>
+
+      <h3>Fórmulas importantes</h3>
+      <ul>
+        <li>Quadrado: A = lado²</li>
+        <li>Retângulo: A = base × altura</li>
+        <li>Triângulo: A = (base × altura) ÷ 2</li>
+        <li>Círculo: A = πr²</li>
+      </ul>
+
+      <hr>
+
+      <h2>Importância da Geometria Plana</h2>
+      <p>
+        A geometria plana é essencial para compreender
+        arquitetura, engenharia, design, mapas,
+        artes visuais e situações do cotidiano.
+      </p>
+
+      <p>
+        Ela também serve como base para a geometria espacial
+        e para diversos conteúdos mais avançados da matemática.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

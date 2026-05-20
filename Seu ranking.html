@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EstudLive - Rank Competitivo</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:radial-gradient(circle at top,#1f4037,#0f2027);
+    color:white;
+    text-align:center;
+}
+
+/* HEADER */
+header{
+    padding:25px;
+    font-size:26px;
+    font-weight:bold;
+    background:rgba(0,0,0,0.4);
+}
+
+/* CONTAINER */
+.container{
+    max-width:800px;
+    margin:40px auto;
+    padding:20px;
+}
+
+/* LIGA ATUAL */
+.liga-atual{
+    padding:30px;
+    border-radius:25px;
+    margin-bottom:40px;
+    transition:0.4s;
+}
+
+/* NOME DA LIGA */
+.liga-nome{
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+/* PINGUIM */
+.pinguim{
+    width:180px;
+    height:220px;
+    margin:0 auto 20px auto;
+    border-radius:50% 50% 45% 45%;
+    position:relative;
+    transition:0.6s;
+}
+
+/* OLHOS */
+.olho{
+    width:25px;
+    height:25px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
+    top:60px;
+}
+
+.olho::after{
+    content:"";
+    width:10px;
+    height:10px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:7px;
+    left:7px;
+}
+
+.olho1{ left:50px; }
+.olho2{ right:50px; }
+
+/* BICO */
+.bico{
+    width:40px;
+    height:25px;
+    background:orange;
+    border-radius:50%;
+    position:absolute;
+    top:95px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* BARRA PROGRESSO */
+.progress{
+    height:12px;
+    background:rgba(255,255,255,0.1);
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:20px;
+}
+
+.progress-bar{
+    height:100%;
+    background:#00eaff;
+    width:0%;
+    transition:width 1s ease;
+}
+
+/* LISTA LIGAS */
+.listas{
+    margin-top:30px;
+}
+
+.liga-item{
+    padding:12px;
+    margin:8px 0;
+    border-radius:12px;
+    background:rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+
+.liga-item.ativa{
+    background:linear-gradient(90deg,#00eaff,#00ff88);
+    color:black;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>🏆 Rank Competitivo EstudLive</header>
+
+<div class="container">
+
+<div class="liga-atual" id="ligaBox">
+    <div class="liga-nome" id="ligaNome"></div>
+
+    <div class="pinguim" id="pinguim">
+        <div class="olho olho1"></div>
+        <div class="olho olho2"></div>
+        <div class="bico"></div>
+    </div>
+
+    <div id="xpInfo"></div>
+
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+</div>
+
+<div class="listas" id="listaLigas"></div>
+
+</div>
+
+<script>
+
+/* XP DO USUÁRIO */
+let userXP = parseInt(localStorage.getItem("xp")) || 0;
+
+/* LIGAS (estilo rank competitivo) */
+const ligas = [
+{ nome:"10 - Carvão", xp:0, cor:"#2c2c2c" },
+{ nome:"9 - Ferro", xp:200, cor:"#8a8a8a" },
+{ nome:"8 - Jeremejevite", xp:400, cor:"#6ed3ff" },
+{ nome:"7 - Fluorite", xp:700, cor:"#b36bff" },
+{ nome:"6 - Grandidierite", xp:1000, cor:"#1abc9c" },
+{ nome:"5 - Turmalina Paraíba", xp:1400, cor:"#00ffe1" },
+{ nome:"4 - Âmbar", xp:1800, cor:"#ffbf00" },
+{ nome:"3 - Berilo Vermelho", xp:2300, cor:"#ff2e63" },
+{ nome:"2 - Painita", xp:3000, cor:"#9b111e" },
+{ nome:"1 - Alexandrite", xp:4000, cor:"#7c3aed" }
+];
+
+let ligaAtualIndex = 0;
+
+/* DESCOBRIR LIGA ATUAL */
+ligas.forEach((liga,index)=>{
+    if(userXP >= liga.xp){
+        ligaAtualIndex = index;
+    }
+});
+
+const ligaAtual = ligas[ligaAtualIndex];
+
+/* APLICAR VISUAL */
+document.getElementById("ligaNome").innerText = ligaAtual.nome;
+document.getElementById("pinguim").style.background = ligaAtual.cor;
+document.getElementById("ligaBox").style.boxShadow = "0 0 40px " + ligaAtual.cor;
+document.getElementById("xpInfo").innerText = userXP + " XP";
+
+/* BARRA */
+let proximaXP = ligas[ligaAtualIndex+1]?.xp || ligas[ligaAtualIndex].xp;
+let porcentagem = ((userXP - ligaAtual.xp) / (proximaXP - ligaAtual.xp)) * 100;
+if(!isFinite(porcentagem)) porcentagem = 100;
+
+document.getElementById("progressBar").style.width = porcentagem + "%";
+
+/* LISTA COMPLETA */
+const lista = document.getElementById("listaLigas");
+
+ligas.forEach((liga,index)=>{
+
+    const div = document.createElement("div");
+    div.classList.add("liga-item");
+
+    if(index === ligaAtualIndex){
+        div.classList.add("ativa");
+    }
+
+    div.innerText = liga.nome + " - " + liga.xp + " XP";
+
+    lista.appendChild(div);
+});
+
+</script>
+
+</body>
+</html>

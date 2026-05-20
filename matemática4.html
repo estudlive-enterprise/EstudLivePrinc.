@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matemática – Conjuntos Numéricos</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a5b7d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 200vw;
+      height: 100vh;
+      background-color: #a5b7d4;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      background-color: white;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #8fa0bf;
+      padding: 20px 0;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .menu-button.active,
+    .menu-button:hover {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 25px;
+      overflow-y: auto;
+      background-color: #a5b7d4;
+    }
+
+    h1, h2, h3 {
+      color: #2f3138;
+    }
+
+    p {
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    ul {
+      margin-left: 25px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo">M</div>
+      <span>Matemática – Conjuntos Numéricos</span>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="main">
+
+    <!-- Menu lateral -->
+    <div class="sidebar">
+      <a href="matemática.html"><button class="menu-button">Equações</button></a>
+      <a href="matemática2.html"><button class="menu-button">Funções</button></a>
+      <a href="matemática3.html"><button class="menu-button">Geometria</button></a>
+      <button class="menu-button active">Conjuntos Numéricos</button>
+      <a href="matemática5.html"><button class="menu-button">Estatística</button></a>
+      <a href="index6.html"><button class="menu-button">voltar</button></a>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="content">
+
+      <h1>Conjuntos Numéricos</h1>
+
+      <h2>O que são Conjuntos Numéricos?</h2>
+      <p>
+        <strong>Conjuntos numéricos</strong> são agrupamentos de números
+        que possuem características semelhantes.
+        Eles foram criados para organizar os números
+        e facilitar o estudo da matemática.
+      </p>
+
+      <p>
+        Cada novo conjunto surge para resolver limitações
+        do conjunto anterior.
+      </p>
+
+      <hr>
+
+      <h2>Conjunto dos Números Naturais (ℕ)</h2>
+      <p>
+        Os números naturais são usados para contar.
+      </p>
+
+      <p>
+        ℕ = {0, 1, 2, 3, 4, 5, ...}
+      </p>
+
+      <ul>
+        <li>Não possuem números negativos</li>
+        <li>Não possuem frações</li>
+        <li>Podem ou não incluir o zero (dependendo da convenção)</li>
+      </ul>
+
+      <hr>
+
+      <h2>Conjunto dos Números Inteiros (ℤ)</h2>
+      <p>
+        Os números inteiros surgem da necessidade
+        de representar dívidas, temperaturas abaixo de zero
+        e situações com valores negativos.
+      </p>
+
+      <p>
+        ℤ = {..., -3, -2, -1, 0, 1, 2, 3, ...}
+      </p>
+
+      <ul>
+        <li>Incluem números negativos</li>
+        <li>Incluem o zero</li>
+        <li>Não possuem frações</li>
+      </ul>
+
+      <hr>
+
+      <h2>Conjunto dos Números Racionais (ℚ)</h2>
+      <p>
+        Os números racionais são todos os números
+        que podem ser escritos na forma de fração:
+      </p>
+
+      <p>
+        <strong>a / b</strong>, com a ∈ ℤ e b ≠ 0
+      </p>
+
+      <ul>
+        <li>Frações</li>
+        <li>Números decimais exatos (0,5 ; 2,75)</li>
+        <li>Dízimas periódicas (0,333...)</li>
+      </ul>
+
+      <p>
+        Todo número inteiro também é racional.
+      </p>
+
+      <hr>
+
+      <h2>Conjunto dos Números Irracionais (𝕀)</h2>
+      <p>
+        Os números irracionais não podem ser escritos
+        como fração.
+      </p>
+
+      <p>
+        Eles possuem representação decimal
+        infinita e não periódica.
+      </p>
+
+      <h3>Exemplos</h3>
+      <ul>
+        <li>√2</li>
+        <li>√3</li>
+        <li>π (pi)</li>
+      </ul>
+
+      <hr>
+
+      <h2>Conjunto dos Números Reais (ℝ)</h2>
+      <p>
+        O conjunto dos números reais é a união
+        dos números racionais e irracionais.
+      </p>
+
+      <p>
+        ℝ = ℚ ∪ 𝕀
+      </p>
+
+      <p>
+        Todos os números que podem ser representados
+        na reta numérica pertencem aos números reais.
+      </p>
+
+      <hr>
+
+      <h2>Relação entre os Conjuntos</h2>
+      <p>
+        A relação entre os conjuntos é:
+      </p>
+
+      <p>
+        ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ
+      </p>
+
+      <p>
+        Isso significa que todo número natural é inteiro,
+        todo inteiro é racional e todo racional é real.
+      </p>
+
+      <hr>
+
+      <h2>Importância dos Conjuntos Numéricos</h2>
+      <p>
+        Entender os conjuntos numéricos é fundamental
+        para resolver equações, trabalhar com funções,
+        interpretar gráficos e avançar em conteúdos
+        mais complexos da matemática.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

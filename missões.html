@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Missões - EstudLive</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #dcdcdc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      background-color: #a5b7d4;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 50px;
+      background-color: #8fa0bf;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #4571c4;
+      color: #4571c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      background-color: white;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 20px;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      width: 180px;
+      background-color: #8fa0bf;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+      border-right: 1px solid #ddd;
+    }
+
+    .menu-button {
+      background-color: transparent;
+      border: none;
+      text-align: left;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .menu-button:hover,
+    .menu-button.active {
+      background-color: #d6938a;
+      border-radius: 8px;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .form-container h2 {
+      margin: 0 0 20px;
+      text-align: center;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4571c4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .form-container button:hover {
+      background-color: #365a9c;
+    }
+
+    .missions-list {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .missions-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .missions-list li {
+      background-color: #fff;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .progress-bar {
+      width: 100%;
+      max-width: 400px;
+      height: 20px;
+      background-color: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: #4571c4;
+      width: 0;
+      transition: width 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="logo">E</div>
+        <span>EstudLive</span>
+      </div>
+      <div class="topbar-right">
+        <h4 id="stars">0</h4><span>⭐</span>
+        <a href="index3.html">👤</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="sidebar">
+        <a href="index.html"><button class="menu-button">Menu</button></a>
+        <a href="index6.html"><button class="menu-button">Aprender</button></a>
+        <a href="index4.html"><button class="menu-button">Skins</button></a>
+        <a href="missões.html"><button class="menu-button active">Missões</button></a>
+        <a href="index7.html"><button class="menu-button">PinGuia</button></a>
+        <a href="rank.html"><button class="menu-button">Rank</button></a>
+        <a href="video_curso.html"><button class="menu-button">Vídeo Curso</button></a>
+        <a href="meus_cursos.html"><button class="menu-button">Meus Cursos</button></a>
+      </div>
+
+      <div class="content">
+        <div class="form-container">
+          <h2>Missões</h2>
+          <button onclick="generateMissions()">Gerar Missões</button>
+        </div>
+        <div class="missions-list">
+          <ul id="missionsList"></ul>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+/* ============================= */
+/* SISTEMA GLOBAL DE XP E LEVEL  */
+/* ============================= */
+
+let xp = localStorage.getItem("xp") ? parseInt(localStorage.getItem("xp")) : 0;
+let level = localStorage.getItem("level") ? parseInt(localStorage.getItem("level")) : 1;
+
+let totalStars = localStorage.getItem("stars") ? parseInt(localStorage.getItem("stars")) : 0;
+
+document.getElementById("stars").textContent = totalStars;
+
+createXPBar();
+updateXP();
+
+/* ============================= */
+/* CRIAR BARRA DE XP NO TOPO     */
+/* ============================= */
+
+function createXPBar(){
+  const topRight = document.querySelector(".topbar-right");
+
+  const levelText = document.createElement("span");
+  levelText.id = "levelText";
+  levelText.style.fontWeight = "bold";
+  levelText.style.color = "#00ffcc";
+  levelText.style.marginLeft = "10px";
+  levelText.innerText = "Lv " + level;
+
+  const xpContainer = document.createElement("div");
+  xpContainer.style.width = "150px";
+  xpContainer.style.height = "10px";
+  xpContainer.style.background = "#ccc";
+  xpContainer.style.borderRadius = "10px";
+  xpContainer.style.overflow = "hidden";
+  xpContainer.style.marginLeft = "10px";
+
+  const xpBar = document.createElement("div");
+  xpBar.id = "xpBar";
+  xpBar.style.height = "100%";
+  xpBar.style.width = "0%";
+  xpBar.style.background = "linear-gradient(90deg,#00eaff,#00ff88)";
+  xpBar.style.transition = "width 0.5s ease";
+
+  xpContainer.appendChild(xpBar);
+  topRight.appendChild(levelText);
+  topRight.appendChild(xpContainer);
+}
+
+/* ============================= */
+/* SISTEMA DE XP                */
+/* ============================= */
+
+function addXP(amount){
+  xp += amount;
+
+  if(xp >= 100){
+    xp = xp - 100;
+    level++;
+    showLevelUp();
+  }
+
+  localStorage.setItem("xp", xp);
+  localStorage.setItem("level", level);
+
+  updateXP();
+}
+
+function updateXP(){
+  const xpBar = document.getElementById("xpBar");
+  const levelText = document.getElementById("levelText");
+
+  xpBar.style.width = xp + "%";
+  levelText.innerText = "Lv " + level;
+}
+
+/* ============================= */
+/* EFEITO LEVEL UP              */
+/* ============================= */
+
+function showLevelUp(){
+  const levelUp = document.createElement("div");
+  levelUp.innerText = "🔥 LEVEL UP! Você agora é nível " + level;
+  levelUp.style.position = "fixed";
+  levelUp.style.top = "50%";
+  levelUp.style.left = "50%";
+  levelUp.style.transform = "translate(-50%,-50%)";
+  levelUp.style.background = "linear-gradient(45deg,#00eaff,#0072ff)";
+  levelUp.style.padding = "30px 50px";
+  levelUp.style.borderRadius = "20px";
+  levelUp.style.fontSize = "24px";
+  levelUp.style.fontWeight = "bold";
+  levelUp.style.color = "white";
+  levelUp.style.boxShadow = "0 0 40px #00eaff";
+  levelUp.style.zIndex = "999";
+
+  document.body.appendChild(levelUp);
+
+  setTimeout(() => {
+    levelUp.remove();
+  }, 1500);
+}
+
+/* ============================= */
+/* MISSÕES                      */
+/* ============================= */
+
+const missions = [
+  { text: "Estudar por 30 minutos", points: 10 },
+  { text: "Ler 10 páginas de um livro", points: 15 },
+  { text: "Praticar exercícios de lógica por 15 minutos", points: 20 },
+  { text: "Assistir a uma aula online", points: 25 },
+  { text: "Revisar anotações de aula", points: 10 },
+  { text: "Escrever um resumo de um capítulo", points: 30 },
+  { text: "Resolver 5 questões de matemática", points: 35 },
+  { text: "Fazer um mapa mental", points: 20 },
+  { text: "Praticar programação por 1 hora", points: 50 },
+  { text: "Revisar conteúdos anteriores", points: 15 }
+];
+
+function generateMissions() {
+  const missionsList = document.getElementById('missionsList');
+  missionsList.innerHTML = "";
+
+  const selectedMissions = [];
+  while (selectedMissions.length < 3) {
+    const randomMission = missions[Math.floor(Math.random() * missions.length)];
+    if (!selectedMissions.includes(randomMission)) {
+      selectedMissions.push(randomMission);
+    }
+  }
+
+  selectedMissions.forEach(mission => {
+    const li = document.createElement('li');
+    li.textContent = `${mission.text} (+${mission.points} XP)`;
+
+
+    const claimButton = document.createElement('button');
+    claimButton.textContent = "Concluir";
+    claimButton.style.marginLeft = "10px";
+
+    claimButton.onclick = () => claimMission(mission.points, li);
+
+    li.appendChild(claimButton);
+    missionsList.appendChild(li);
+  });
+}
+
+function claimMission(points, missionElement) {
+
+  addXP(points); // GANHA XP
+
+  totalStars += points;
+  document.getElementById('stars').textContent = totalStars;
+  localStorage.setItem("stars", totalStars);
+
+  const progressBar = document.getElementById('progressBar');
+  const progress = Math.min((xp / 100) * 100, 100);
+  progressBar.style.width = `${progress}%`;
+
+  missionElement.remove();
+}
+</script>
+</body>
+</html>
